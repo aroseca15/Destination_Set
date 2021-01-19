@@ -27,4 +27,5 @@ yarn-error.log*
 package-lock.json
 yarn.lock
 
-/.vscode
+# ignoring the cache to be nicer
+.eslintcache
