@@ -35,7 +35,7 @@ const Login = () => {
     }
 
     return (
-        <div>
+        <div className= 'App'>
             <h2>
                 Login Page
             </h2>
@@ -63,10 +63,11 @@ const Login = () => {
                 <button type='submit'>Login</button>
             </form>
             <p>
-                Need an account? <button onClick={() => toggleRedirect(true)}>Signup Here</button>
+                New Here? <button onClick={() => toggleRedirect(true)}>Signup</button>
             </p>
 
         </div >
+
     );
 };
 

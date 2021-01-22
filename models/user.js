@@ -4,23 +4,30 @@ const bcrypt = require('bcryptjs');
 // Creating our User model
 module.exports = function (sequelize, DataTypes) {
     const User = sequelize.define(
-        'User',
-        {
-            // The email cannot be null, and must be a proper email before creation
-            email: {
-                type: DataTypes.STRING,
-                allowNull: false,
-                unique: true,
-                validate: {
-                    isEmail: true
-                }
-            },
-            // The password cannot be null
-            password: {
-                type: DataTypes.STRING,
-                allowNull: false
+        'User', {
+        first: {
+            type: DataTypes.STRING,
+            allowNull: false
+        },
+        last: {
+            type: DataTypes.STRING,
+            allowNull: false
+        },
+        // The email cannot be null, and must be a proper email before creation
+        email: {
+            type: DataTypes.STRING,
+            allowNull: false,
+            unique: true,
+            validate: {
+                isEmail: true
             }
         },
+        // The password cannot be null
+        password: {
+            type: DataTypes.STRING,
+            allowNull: false
+        }
+    },
         {
             // This forces any default 'User' to exclude the password when we query them;
             // this way we don't expose even a hashed password
@@ -51,8 +58,8 @@ module.exports = function (sequelize, DataTypes) {
     });
 
     User.associate = function (models) {
-    // Associating User with Notes
-    // When an User is deleted, also delete any associated Notes
+        // Associating User with Notes
+        // When an User is deleted, also delete any associated Notes
         User.hasMany(models.Note, {
             onDelete: 'cascade'
         });

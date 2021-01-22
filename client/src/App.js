@@ -7,6 +7,7 @@ import Home from './pages/Home';
 import Signup from './pages/Signup';
 import Login from './pages/Login';
 import Notes from './pages/Notes';
+import Destination from './pages/Destination';
 
 
 function App() {
@@ -44,6 +45,9 @@ function App() {
                 <Route path='/login'>
                     <Login />
                 </Route>
+                <PrivateRoute exact path='/destination'>
+                    <Destination/>
+                </PrivateRoute>
                 <PrivateRoute exact path='/notes'>
                     <Notes />
                 </PrivateRoute>
