@@ -1,4 +1,5 @@
 import Navbar from './components/Navbar';
+import Header from './components/Header';
 import './App.css';
 import { BrowserRouter as Router, Switch, Route, Redirect } from 'react-router-dom';
 import axios from 'axios';
@@ -7,6 +8,8 @@ import Home from './pages/Home';
 import Signup from './pages/Signup';
 import Login from './pages/Login';
 import Notes from './pages/Notes';
+import Destination from './pages/Destination';
+import Business from './pages/Business';
 
 
 function App() {
@@ -23,19 +26,20 @@ function App() {
         const { message } = error.toJSON();
         // If we had time, we could write our own custom method to the auth middleware
         // However, we are just gonna use their message.
-        if(message === 'Request failed with status code 401'){
+        if (message === 'Request failed with status code 401') {
             logout();
         }
         // Any status codes that falls outside the range of 2xx cause this function to trigger
         // Do something with response error
         return Promise.reject(error);
     });
-    
+
     return (
         <Router>
             <Navbar />
             <Switch>
                 <Route exact path='/'>
+                    <Header />
                     <Home />
                 </Route>
                 <Route path='/signup'>
@@ -44,6 +48,12 @@ function App() {
                 <Route path='/login'>
                     <Login />
                 </Route>
+                <PrivateRoute exact path='/destination'>
+                    <Destination />
+                </PrivateRoute>
+                <PrivateRoute exact path='/business'>
+                    <Business />
+                </PrivateRoute>
                 <PrivateRoute exact path='/notes'>
                     <Notes />
                 </PrivateRoute>
