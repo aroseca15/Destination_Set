@@ -3,12 +3,12 @@ CREATE DATABASE destination_set;
 
 USE destination_set;
 
-CREATE TABLE business_users (
+CREATE TABLE business (
     id INTEGER AUTO_INCREMENT NOT NULL,
     PRIMARY KEY(id)
 );
 
-CREATE TABLE leisure_users (
+CREATE TABLE leisure (
     id INTEGER AUTO_INCREMENT NOT NULL,
     PRIMARY KEY(id)
 );
