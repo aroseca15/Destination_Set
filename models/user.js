@@ -13,6 +13,26 @@ module.exports = function (sequelize, DataTypes) {
             type: DataTypes.STRING,
             allowNull: false
         },
+
+        phone: {
+            type: DataTypes.STRING,
+            allowNull: false
+        },
+
+        dob: {
+            type: DataTypes.STRING,
+            allowNull: false
+        },
+
+        securityQ: {
+            type: DataTypes.STRING,
+            allowNull: false
+        },
+
+        contact: {
+            type: DataTypes.STRING,
+            allowNull: false
+        },
         // The email cannot be null, and must be a proper email before creation
         email: {
             type: DataTypes.STRING,

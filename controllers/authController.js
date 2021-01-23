@@ -10,7 +10,7 @@ router.post('/login', async (req, res) => {
     try {
         const { email, password } = req.body;
         // Find user
-        const user = await db.User.scope('withPassword').findOne({ where: {email:email }});
+        const user = await db.User.scope('withPassword').findOne({ where: { email: email } });
         if (!user) {
             res.status(400).send('User not found.');
         }
@@ -20,7 +20,7 @@ router.post('/login', async (req, res) => {
         }
         // Create JWT token
         const token = await signAsync(
-            { id: user.id, email: user.email },
+            { id: user.id, email: user.email, first: user.first, phone: user.phone, dob: user.dob, securityQ: user.securityQ, contact: user.contact },
             process.env.SECRET,
             {
                 expiresIn: '24h',
@@ -41,21 +41,27 @@ router.post('/login', async (req, res) => {
 });
 
 // Route for signing up a user.
-// We create a user, tossing back an error fi it fails
+// We create a user, tossing back an error fi it fails    
 router.post('/signup', async (req, res) => {
     try {
-        const { email, password } = req.body;
+        const { email, password, first, last, phone, dob, securityQ, contact } = req.body;
         // Try to create a user
         const user = await db.User.create({
             email,
-            password
+            password,
+            first,
+            last,
+            phone,
+            dob,
+            securityQ,
+            contact
         });
         if (!user) {
             res.status(400).send('Cannot create user.');
         }
         // Create JWT token
         const token = await signAsync(
-            { id: user.id, email: user.email },
+            { id: user.id, email: user.email, first: user.first, phone: user.phone, dob: user.dob, securityQ: user.securityQ, contact: user.contact },
             process.env.SECRET,
             {
                 expiresIn: '24h',

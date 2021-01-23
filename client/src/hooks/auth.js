@@ -21,9 +21,9 @@ const useAuth = () => {
             });
     };
 
-    const signup = async (email, password) => {
+    const signup = async (email, password, first, last, phone, dob, securityQ, contact) => {
         return axios.post('api/auth/signup',
-            { email: email, password: password })
+            { email: email, password: password, first: first, last: last, phone: phone, dob: dob, securityQ: securityQ, contact: contact })
             .then(res => {
                 setToken(res.data.token);
                 setUser(res.data.user);

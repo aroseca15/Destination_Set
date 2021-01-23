@@ -13,6 +13,11 @@ const Signup = () => {
     const [verify, setVerify] = useState('');
     const [first, setFirst] = useState('');
     const [last, setLast] = useState('');
+    const [phone, setPhone] = useState('');
+    const [dob, setDob] = useState('');
+    const [securityQ, setSecurityQ] = useState('');
+    const [contact, setContact] = useState('');
+
 
     // For our redirector
     const [redirectToLogin, toggleRedirect] = useState(false);
@@ -20,12 +25,12 @@ const Signup = () => {
     const { from } = location.state || { from: { pathname: '/' } };
 
 
-    const validateNames = name =>{
+    const validateNames = name => {
         if (name === ' ') {
             alert('Cannot be blank.');
         } else if (/[0-9]+$/.test(name)) {
             alert('Roman Numerals Needed');
-        } 
+        }
     };
     const handleSubmit = event => {
         event.preventDefault();
@@ -52,8 +57,8 @@ const Signup = () => {
 
         // If same return True. 
         else {
-            alert('Password Match: Welcome to Destination Set!');
-            signup(first, last, email, password).then(res => {
+            // alert('Password Match: Welcome to Destination Set!');
+            signup(email, password, first, last, phone, dob, securityQ, contact).then(res => {
                 // Go back to whence you came!
                 history.replace(from);
             });
@@ -91,7 +96,6 @@ const Signup = () => {
                     name='first'
                     placeholder='First Name'
                     type='first'
-                    // autoComplete='username'
                     value={first}
                     onChange={event => setFirst(event.target.value)}
                 />
@@ -101,31 +105,29 @@ const Signup = () => {
                     name='last'
                     placeholder='Last Name'
                     type='last'
-                    // autoComplete='password'
                     value={last}
                     onChange={event => setLast(event.target.value)}
                 />
                 <br />
-                <label htmlFor='dob'>What is your Birthday? :</label>
+                <label htmlFor='dob'>Date of Birth :</label>
                 <input
                     name='dob'
                     placeholder='MM/DD/YYYY'
-                    type='email'
-                // autoComplete='username'
-                // value={email}
-                // onChange={event => setEmail(event.target.value)}
+                    type='dob'
+                    autoComplete='username'
+                    value={dob}
+                    onChange={event => setDob(event.target.value)}
                 />
                 <br />
                 <label htmlFor='securityQ'>Name of your Favorite Pet :</label>
                 <input
                     name='securityQ'
                     placeholder='Pet Name'
-                    type='password'
-                // autoComplete='password'
-                // value={password}
-                // onChange={event => setPassword(event.target.value)}
+                    type='securityQ'
+                    value={securityQ}
+                    onChange={event => setSecurityQ(event.target.value)}
                 />
-                <br />
+                {/* <br />
                 <br />
                 <label htmlFor='UN'>Username :</label>
                 <input
@@ -136,13 +138,22 @@ const Signup = () => {
                 // value={password}
                 // onChange={event => setPassword(event.target.value)}
                 />
+                <br /> */}
+                <br />
+                <label htmlFor='phone'>Enter your preferred phone number :</label>
+                <input
+                    name='phone'
+                    placeholder='xxx-xxx-xxxx'
+                    type='phone'
+                    value={phone}
+                    onChange={event => setPhone(event.target.value)}
+                />
                 <br />
                 <label htmlFor='email'>Email :</label>
                 <input
                     name='email'
                     placeholder='Email'
                     type='email'
-                    // autoComplete='username'
                     value={email}
                     onChange={event => setEmail(event.target.value)}
                 />
@@ -152,7 +163,6 @@ const Signup = () => {
                     name='password'
                     placeholder='Password'
                     type='password'
-                    // autoComplete='password'
                     value={password}
                     onChange={event => setPassword(event.target.value)}
                 />
@@ -162,7 +172,6 @@ const Signup = () => {
                     name='verify'
                     placeholder='Enter Password Again'
                     type='password'
-                    // autoComplete='username'
                     value={verify}
                     onChange={event => setVerify(event.target.value)}
                 />
@@ -171,10 +180,9 @@ const Signup = () => {
                 <input
                     name='contact'
                     placeholder='Text or Email'
-                    type='password'
-                // autoComplete='password'
-                // value={password}
-                // onChange={event => setPassword(event.target.value)}
+                    type='contact'
+                    value={contact}
+                    onChange={event => setContact(event.target.value)}
                 />
                 <br />
 
