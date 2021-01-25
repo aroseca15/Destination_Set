@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { Redirect, useHistory, useLocation } from 'react-router-dom';
-// import { INTEGER } from 'sequelize/types';
 import useAuth from '../hooks/auth';
+// import { INTEGER } from 'sequelize/types';
 
 const Signup = () => {
     const { signup, isLoggedIn } = useAuth();
@@ -36,6 +36,9 @@ const Signup = () => {
         event.preventDefault();
         validateNames(first);
         validateNames(last);
+
+
+        // Password Validation:
 
         // If password not entered 
         if (password === '') {
@@ -86,9 +89,9 @@ const Signup = () => {
                 Signup Page
             </h2>
 
-            <p>
-                What type of account are you looking for? <button onClick={() => toggleRedirect(true)}>Business</button><button onClick={() => toggleRedirect(true)}>Leisure</button>
-            </p>
+            {/* <p>
+            What type of account are you looking for? <button onClick={() => toggleRedirect(true)}>Business</button><button onClick={() => toggleRedirect(true)}>Leisure</button>
+        </p> */}
 
             <form onSubmit={handleSubmit}>
                 <label htmlFor='first'>First Name :</label>
