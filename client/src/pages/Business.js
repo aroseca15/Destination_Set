@@ -2,13 +2,13 @@
 // import { Redirect, useHistory, useLocation } from 'react-router-dom';
 import useAuth from '../hooks/auth';
 import { Link } from 'react-router-dom';
-import Destination from './Destination';
+// import Destination from './Destination';
 
 
 function Business() {
-    if (Destination.params.id === 1) {
-        console.log('Paris, you did it kiddo!');
-    }
+    // if (Destination.params.id === 1) {
+    //     console.log('Paris');
+    // }
     // const history = useHistory();
     // const location = useLocation();
     // onClick={() => toggleRedirect(true)}
@@ -22,7 +22,7 @@ function Business() {
                     <>
                         <li>Hello, {getProfile().first}</li>
                         <li><Link onClick={() => logout()} to='/'>Logout</Link></li>
-                        <li>{ }</li>
+                        {/* <li>{ }</li> */}
                     </>
                     :
                     <>

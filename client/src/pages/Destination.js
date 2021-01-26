@@ -23,7 +23,7 @@ function Destination() {
         <div className='App'>
 
             <div className='icons'>
-                <button onClick={<Redirect to={{
+                {/* <button onClick={<Redirect to={{
                     id: 1,
                     pathname: '/business',
                     state: { from: '/destination' }
@@ -35,7 +35,7 @@ function Destination() {
                     pathname: '/business',
                     state: { from: '/destination' }
                 }}
-                />}>Rio De Janeiro</button>
+                />}>Rio De Janeiro</button> */}
                 <button>London</button>
                 <button>NYC</button>
 
