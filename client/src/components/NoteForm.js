@@ -19,9 +19,9 @@ const NoteForm = (props) => {
 
     return (
         <div>
-            <h2>Note Form</h2>
+            {/* <h2>Note Form</h2> */}
             <form onSubmit={handleSubmit}>
-                <label htmlFor="title">Title:</label>
+                <label htmlFor="title"></label>
                 <input
                     name='title'
                     placeholder='title'
@@ -30,7 +30,8 @@ const NoteForm = (props) => {
                     onChange={event => setTitle(event.target.value)}
                 />
                 <br />
-                <label htmlFor="body">Body:</label>
+                <br />
+                <label htmlFor="body"></label>
                 <textarea
                     name='body'
                     placeholder='body'
@@ -38,7 +39,7 @@ const NoteForm = (props) => {
                     onChange={event => setBody(event.target.value)}
                 />
                 <br />
-                <button type='submit'>Save Note</button>
+                <button className= 'btn btn-primary' type='submit'>Save Note</button>
             </form>
         </div>
     );

@@ -23,17 +23,20 @@ const Notes = function () {
     }
     return (
         <div>
-            <h2>Notes</h2>
-            <ol>
-                {notes.map(note => {
-                    return (
-                        <li key={note.id}>
-                            <strong>{note.title}</strong> {note.body} <sub>from: {note.User.email}</sub>
-                        </li>
-                    );
-                })}
-            </ol>
-            <NoteForm didSubmit={refreshParent} />
+            <div className='card' id='notes'>
+                <h2>Meeting Notes</h2>
+                <ol>
+                    {notes.map(note => {
+                        return (
+                            <li key={note.id}>
+                                <strong>{note.title}: </strong>
+                                {note.body} 
+                            </li>
+                        );
+                    })}
+                </ol>
+                <NoteForm didSubmit={refreshParent} />
+            </div>
         </div>
     );
 };
