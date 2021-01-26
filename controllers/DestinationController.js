@@ -10,7 +10,7 @@ router.get('/destinations', isAuthenticated, function(req, res) {
     console.log("I am res!")
 });
 
-// router.post('/', isAuthenticated, function(req, res) {
+// router.post('/business', isAuthenticated, function(req, res) {
 //     db.Destinations.create({
 //         UserId: req.user.id,
 //         ...req.body
