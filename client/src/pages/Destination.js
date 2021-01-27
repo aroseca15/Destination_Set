@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+import Logo from '../assets/images/codingchamber.png';
 
 // import { useState } from 'react';
 
@@ -22,20 +23,7 @@ const Destination = () => {
         <div className='App'>
 
             <div className='icons'>
-                {/* <button onClick={<Redirect to={{
-                    id: 1,
-                    pathname: '/',
-                    state: { from: '/destination' }
-                }}
-                />}>Paris</button>
 
-                <button onClick={<Redirect to={{
-                    id: 2,
-                    pathname: '/',
-                    state: { from: '/destination' }
-                }}
-                />}>Rio De Janeiro</button> */}
-                {/* <img src=''></img> */}
                 <Link to={{
                     pathname: '/',
                     linkDestination: {
@@ -43,7 +31,7 @@ const Destination = () => {
                     }
                 }}>Paris</Link><br />
 
-                {/* <img src=''></img> */}
+                <img src={Logo} width={200} height={100} alt="I am an image"/>
                 <Link to={{
                     pathname: '/',
                     linkDestination: {
@@ -67,8 +55,7 @@ const Destination = () => {
                     }
                 }}>NYC</Link>
             </div>
-
-            {/* {selectCity ? <Business city={cityName} /> : <div></div>} */}
+            
         </div >
 
     );

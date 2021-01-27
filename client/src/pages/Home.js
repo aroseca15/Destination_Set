@@ -1,44 +1,78 @@
 import useAuth from '../hooks/auth';
 import { Link } from 'react-router-dom';
-import Header from '../components/Header';
+// import { useState } from 'react';
+// import { axios } from 'axios';
+
+// async function callDestination() {
+//     const dataq = {
+//         'source': 'en',
+//         'q': 'Hello, world!',
+//         'target': ';es'
+//     };
+//     const headersq = {
+//         'content-type': 'application/x-www-form-urlencoded',
+//         'x-rapidapi-host': 'google-translate1.p.rapidapi.com',
+//         'x-rapidapi-key': '2ec7e6775cmsh5864e9b8b1fc24cp1e4a90jsn0d8cfe5c5551',
+//         'accept-encoding': 'application/gzip',
+//         'useQueryString': true
+//     };
+//     await axios.post('https://google-translate1.p.rapidapi.com/language/translate/v2', dataq, {
+//         headers: headersq
+//     }).then((response) => {
+//         console.log(response);
+//     })
+//         .catch((error) => {
+//             console.log(error);
+//         });
+// }
+// import { useState } from 'react';
+
 
 function Home(props) {
+
     console.log(props.location.linkDestination);
-    const { isLoggedIn } = useAuth();
+    const { isLoggedIn, getProfile } = useAuth();
     return (
-        <div className='App'>
+        <main className='App'>
+
             {isLoggedIn() ?
                 <>
-                    <Header>{props.name}</Header><Link to={{
-                        pathname: '/business',
-                    }}>Solutions to the Unexpected</Link><br />
+                    <section className='row'>
+                        <div>
+                            <h1 id='h1'>Welcome Back, {getProfile().first}</h1>
+                            {/* <h2>{props.location.linkDestination.name}</h2> */}
+                        </div>
+                    </section>
 
-                    {/* <li>Hello, {getProfile().first}</li> */}
-                    {/* <li><Link onClick={() => logout()} to='/'>Logout</Link></li> */}
                     <div className='card'>
                         <h1>TESTING</h1>
-                        {/* <img src='https://1.bp.blogspot.com/-9Ij7gA1sRbg/UoTcimeQtNI/AAAAAAAAQwU/BET3_SZbftY/s1600/Paris+French+(6).jpg' height='300px' width='300px' ></img> */}
                         <p>TESTING</p>
                     </div>
                     <div>
-
+                        <Link to={{
+                            pathname: '/business',
+                        }}>Solutions to the Unexpected</Link><br />
                     </div>
                 </>
                 :
                 <>
-                    <h1>Not Logged In</h1>
-                    <h2 id='h1'>
-                        Home Page
-                    </h2>
-                    <p id='loginP'>
-                        Welcome to Destination Set
-                    </p>
+                    <form>
+                        <h1 id='h1'>
+                            Welcome to Destination Set
+                        </h1>
+                        {/* <p id='loginP'>
+                            New Here? <button className="btn btn-light" id='btn-signup' onClick={() => toggleRedirect(true)}>Signup</button>
+                            <button id='btn-login' className="btn btn-light" type='submit'>Login</button>
+                        </p> */}
+                    </form>
+
                 </>
             }
-        </div>
+        </main>
 
     );
 }
 
 export default Home;
 
+// {props.name}
