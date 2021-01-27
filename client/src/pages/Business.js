@@ -23,13 +23,13 @@ function Business() {
                         <li>Hello, {getProfile().first}</li>
                         <li><Link onClick={() => logout()} to='/'>Logout</Link></li>
                         <section className='row'>
-
+                           
                         </section>
 
                         <section className='row'>
 
                         </section>
-                        
+
                         <section className='row'>
 
                         </section>
