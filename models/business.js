@@ -1,5 +1,5 @@
 module.exports = function (sequelize, DataTypes) {
-    const Destinations = sequelize.define('Destinations', {
+    const Business = sequelize.define('business', {
         id: { 
             allowNull: false,
             autoIncrement: true,
@@ -59,5 +59,5 @@ module.exports = function (sequelize, DataTypes) {
 
     
 
-    return Destinations;
+    return Business;
 };

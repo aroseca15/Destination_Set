@@ -12,7 +12,7 @@ const Login = () => {
     // For our redirector
     const [redirectToSignup, toggleRedirect] = useState(false);
     // This is the key part to our redirector. We can pull the prior location out here, if it exists
-    const { from } = location.state || { from: { pathname: '/' } };
+    const { from } = location.state || { from: { pathname: '/destinations' } };
 
     const handleSubmit = event => {
         event.preventDefault();
@@ -22,7 +22,7 @@ const Login = () => {
     };
 
     if (isLoggedIn()) {
-        return <Redirect to={location.state || '/'} />;
+        return <Redirect to={location.state || '/destinations'} />;
     }
 
     if (redirectToSignup) {
@@ -35,12 +35,12 @@ const Login = () => {
     }
 
     return (
-        <div className= 'App'>
-            <h2>
+        <div className='App'>
+            <h2 id= 'h1'>
                 Login Page
             </h2>
             <form onSubmit={handleSubmit}>
-                <label htmlFor='email'>Email:</label>
+                <label id='fillIn' htmlFor='email'>Email:</label>
                 <input
                     name='email'
                     placeholder='Email'
@@ -49,8 +49,8 @@ const Login = () => {
                     value={email}
                     onChange={event => setEmail(event.target.value)}
                 />
-                <br />
-                <label htmlFor='password'>Password:</label>
+                <br /><br />
+                <label id='fillIn' htmlFor='password'>Password:</label>
                 <input
                     name='password'
                     placeholder='Password'
@@ -59,13 +59,13 @@ const Login = () => {
                     value={password}
                     onChange={event => setPassword(event.target.value)}
                 />
-                <br />
-                <button type='submit'>Login</button>
-            </form>
-            <p>
-                New Here? <button onClick={() => toggleRedirect(true)}>Signup</button>
-            </p>
+                <br /><br />
+                <p id='loginP'>
+                    New Here? <button className="btn btn-light" id='btn-signup' onClick={() => toggleRedirect(true)}>Signup</button>
+                    <button id='btn-login' className="btn btn-light" type='submit'>Login</button>
+                </p>
 
+            </form>
         </div >
 
     );

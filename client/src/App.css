@@ -1,9 +1,103 @@
 .App{
     text-align: center;
+    margin-top: 70px;
   } 
   
 .bg{
     background-color: cornsilk;
+}
+
+#visa{
+  background-color: rgba(255, 0, 0, 0.565);
+  
+}
+
+#btnText{
+  color: black;
+  /* font-weight: 300; */
+}
+
+#fillIn{
+  font-family: 'Times New Roman', Times, serif;
+  font-weight: 600;
+  font-size: larger;
+}
+
+#h1{
+  margin-bottom: 50px;
+  font-family: 'Times New Roman', Times, serif;
+  font-weight: 600;
+}
+
+#loginP{
+/* margin-right: 25px; */
+margin-top: 100px;
+font-family: 'Times New Roman', Times, serif;
+font-weight: 600;
+font-size: larger;
+}
+
+#btn-login{
+  margin-left: 10px;
+  background-color:lightsteelblue;
+  font-family: 'Times New Roman', Times, serif;
+  font-weight: 600;
+  font-size: larger;
+}
+
+#submit{
+ color: blue;
+}
+
+#btn-signup{
+  background-color:rgb(50, 205, 187);
+  margin-left: 5px;
+  font-family: 'Times New Roman', Times, serif;
+  font-weight: 600;
+  font-size: larger;
+}
+
+.row{
+  /* margin-left: 20px; */
+  margin-bottom: 20px;
+}
+
+#schedule{
+  /* margin-left: 500px; */
+  font-family: 'Times New Roman', Times, serif;
+  font-weight: 500;
+}
+
+.dateTime{
+  font-family: 'Times New Roman', Times, serif;
+  font-weight: 500;
+  font-size: larger;
+  margin-left: 400px;
+}
+
+#currentDay{
+  /* display: inline-block; */
+  /* margin-right: 20px */
+}
+
+#currentTime{
+  /* display: inline-block; */
+}
+
+#notes{
+  text-align: center;
+  font-family: 'Times New Roman', Times, serif;
+  font-weight: 900;
+  background-color: rgba(85, 107, 47, 0.341);
+  max-width: 25rem;
+}
+
+#aquiz{
+  text-align: center;
+  font-family: 'Times New Roman', Times, serif;
+  font-weight: 900;
+  background-color: bisque;
+  max-width: 25rem;
 }
 
 /* Photo Credits: Paris- www.vactualpapers.com   Rio De Janeiro- www.freewalkertours.com/   London- www.youtube.com    New York- www.istockphoto.com  */

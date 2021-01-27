@@ -1,5 +1,5 @@
 import Navbar from './components/Navbar';
-import Header from './components/Header';
+// import Header from './components/Header';
 import './App.css';
 import { BrowserRouter as Router, Switch, Route, Redirect } from 'react-router-dom';
 import axios from 'axios';
@@ -10,7 +10,6 @@ import Login from './pages/Login';
 import Notes from './pages/Notes';
 import Destination from './pages/Destination';
 import Business from './pages/Business';
-
 
 function App() {
     // Pull auth token from storage, in case you refresh the page
@@ -38,9 +37,7 @@ function App() {
         <Router>
             <Navbar />
             <Switch>
-                <Route exact path='/'>
-                    <Header />
-                    <Home />
+                <Route exact path='/' component= {Home}>
                 </Route>
                 <Route path='/signup'>
                     <Signup />
@@ -48,9 +45,11 @@ function App() {
                 <Route path='/login'>
                     <Login />
                 </Route>
-                <PrivateRoute exact path='/destination'>
+                <PrivateRoute exact path='/destinations'>
+                    {/* <Header /> */}
                     <Destination />
                 </PrivateRoute>
+                {/* <Route path='/route/:id' exact component={MyComponent} /> */}
                 <PrivateRoute exact path='/business'>
                     <Business />
                 </PrivateRoute>

@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { Redirect, useHistory, useLocation } from 'react-router-dom';
-// import { INTEGER } from 'sequelize/types';
 import useAuth from '../hooks/auth';
+// import { INTEGER } from 'sequelize/types';
 
 const Signup = () => {
     const { signup, isLoggedIn } = useAuth();
@@ -36,6 +36,9 @@ const Signup = () => {
         event.preventDefault();
         validateNames(first);
         validateNames(last);
+
+
+        // Password Validation:
 
         // If password not entered 
         if (password === '') {
@@ -82,16 +85,16 @@ const Signup = () => {
 
     return (
         <div className='App'>
-            <h2>
+            <h2 id= 'h1'>
                 Signup Page
             </h2>
 
-            <p>
-                What type of account are you looking for? <button onClick={() => toggleRedirect(true)}>Business</button><button onClick={() => toggleRedirect(true)}>Leisure</button>
-            </p>
+            {/* <p>
+            What type of account are you looking for? <button onClick={() => toggleRedirect(true)}>Business</button><button onClick={() => toggleRedirect(true)}>Leisure</button>
+        </p> */}
 
             <form onSubmit={handleSubmit}>
-                <label htmlFor='first'>First Name :</label>
+                <label id='fillIn' htmlFor='first'>First Name :</label>
                 <input
                     name='first'
                     placeholder='First Name'
@@ -100,7 +103,7 @@ const Signup = () => {
                     onChange={event => setFirst(event.target.value)}
                 />
                 <br />
-                <label htmlFor='last'>Last Name :</label>
+                <label id='fillIn' htmlFor='last'>Last Name :</label>
                 <input
                     name='last'
                     placeholder='Last Name'
@@ -109,7 +112,7 @@ const Signup = () => {
                     onChange={event => setLast(event.target.value)}
                 />
                 <br />
-                <label htmlFor='dob'>Date of Birth :</label>
+                <label id='fillIn' htmlFor='dob'>Date of Birth :</label>
                 <input
                     name='dob'
                     placeholder='MM/DD/YYYY'
@@ -119,7 +122,7 @@ const Signup = () => {
                     onChange={event => setDob(event.target.value)}
                 />
                 <br />
-                <label htmlFor='securityQ'>Name of your Favorite Pet :</label>
+                <label id='fillIn' htmlFor='securityQ'>Name of your Favorite Pet :</label>
                 <input
                     name='securityQ'
                     placeholder='Pet Name'
@@ -140,7 +143,7 @@ const Signup = () => {
                 />
                 <br /> */}
                 <br />
-                <label htmlFor='phone'>Enter your preferred phone number :</label>
+                <label id='fillIn' htmlFor='phone'>Enter your preferred phone number :</label>
                 <input
                     name='phone'
                     placeholder='xxx-xxx-xxxx'
@@ -149,7 +152,7 @@ const Signup = () => {
                     onChange={event => setPhone(event.target.value)}
                 />
                 <br />
-                <label htmlFor='email'>Email :</label>
+                <label id='fillIn' htmlFor='email'>Email :</label>
                 <input
                     name='email'
                     placeholder='Email'
@@ -158,7 +161,7 @@ const Signup = () => {
                     onChange={event => setEmail(event.target.value)}
                 />
                 <br />
-                <label htmlFor='password'>Create Password :</label>
+                <label id='fillIn' htmlFor='password'>Create Password :</label>
                 <input
                     name='password'
                     placeholder='Password'
@@ -167,7 +170,7 @@ const Signup = () => {
                     onChange={event => setPassword(event.target.value)}
                 />
                 <br />
-                <label htmlFor='verify'>Verify Password :</label>
+                <label id='fillIn' htmlFor='verify'>Verify Password :</label>
                 <input
                     name='verify'
                     placeholder='Enter Password Again'
@@ -176,7 +179,7 @@ const Signup = () => {
                     onChange={event => setVerify(event.target.value)}
                 />
                 <br />
-                <label htmlFor='contact'>Prefered Method of Contact for Important Alerts :</label>
+                <label id='fillIn' htmlFor='contact'>Prefered Method of Contact for Important Alerts :</label>
                 <input
                     name='contact'
                     placeholder='Text or Email'
@@ -184,12 +187,12 @@ const Signup = () => {
                     value={contact}
                     onChange={event => setContact(event.target.value)}
                 />
-                <br />
+                <br /><br />
 
-                <button type='submit'>Register</button>
+                <button id='btn-signup' className="btn btn-light" type='submit'>Register</button>
             </form>
-            <p>
-                Already have an account? <button onClick={() => toggleRedirect(true)}>Login Here</button>
+            <p id='loginP'>
+                Already have an account? <button id='btn-login' className="btn btn-light" onClick={() => toggleRedirect(true)}>Login Here</button>
             </p>
 
         </div>

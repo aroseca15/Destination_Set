@@ -1,30 +1,28 @@
-DROP DATABASE IF EXISTS destination_set;
-CREATE DATABASE destination_set;
 
 USE destination_set;
 
-CREATE TABLE business (
-    id INTEGER AUTO_INCREMENT NOT NULL,
-    PRIMARY KEY(id)
-);
+-- CREATE TABLE business (
+--     id INTEGER AUTO_INCREMENT NOT NULL,
+--     PRIMARY KEY(id)
+-- );
 
-CREATE TABLE leisure (
-    id INTEGER AUTO_INCREMENT NOT NULL,
-    PRIMARY KEY(id)
-);
+-- CREATE TABLE leisure (
+--     id INTEGER AUTO_INCREMENT NOT NULL,
+--     PRIMARY KEY(id)
+-- );
 
-CREATE TABLE destinations (
-    id INTEGER AUTO_INCREMENT NOT NULL,
-    city TEXT (50),
-    country TEXT (50),
-    latitude TEXT,
-    longitude TEXT,
-    languageUsed TEXT (50),
-    currency TEXT (50),
-    currencySymbol TEXT (50),
-    body TEXT,
-    PRIMARY KEY (id)
-);
+-- CREATE TABLE destinations (
+--     id INTEGER AUTO_INCREMENT NOT NULL,
+--     city TEXT (50),
+--     country TEXT (50),
+--     latitude TEXT,
+--     longitude TEXT,
+--     languageUsed TEXT (50),
+--     currency TEXT (50),
+--     currencySymbol TEXT (50),
+--     body TEXT,
+--     PRIMARY KEY (id)
+-- );
 
 -- DROP TABLE IF EXISTS destinations;
 

@@ -1,23 +1,23 @@
 import { useState } from 'react';
 import axios from 'axios';
 
-const NoteForm = (props) => {
+const AquizForm = (props) => {
     const { didSubmit } = props;
     const [title, setTitle] = useState('');
     const [body, setBody] = useState('');
 
     const handleSubmit = event => {
         event.preventDefault();
-        submitNote();
+        submitAquiz();
     };
-    const submitNote = async () => {
-        await axios.post('/api/notes', { title: title, body: body });
+    
+    const submitAquiz = async () => {
+        await axios.post('/api/aquiz', { title: title, body: body });
         setBody('');
         setTitle('');
         didSubmit();
     };
 
-    
     return (
         <div>
             {/* <h2>Note Form</h2> */}
@@ -41,10 +41,9 @@ const NoteForm = (props) => {
                 />
                 <br />
                 <button className= 'btn btn-info' type='submit'>Save</button>
-                {/* <button onClick={handleDelete} className= 'btn btn-danger' type='submit'>Delete</button> */}
             </form>
         </div>
     );
 };
 
-export default NoteForm;
+export default AquizForm;

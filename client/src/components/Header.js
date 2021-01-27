@@ -1,30 +1,29 @@
-import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
 import useAuth from '../hooks/auth';
+import Clock from './Clock';
 
-const Header = () => {
-    const { isLoggedIn, logout, getProfile } = useAuth();
+const Header = (props) => {
+    // console.log(props.location.linkDestination);
+    const { isLoggedIn, getProfile} = useAuth();
     return (
-        <nav className="navbar navbar-light bg-light">
-            <div className="container-fluid">
-                <span className="navbar-brand mb-0 h1">header</span>
-                <ul>
-                    <li><button><Link to="/">Home</Link></button></li>
-                    <li><button><Link to='/notes'>Notes</Link></button></li>
+        <main className="container-fluid">
+            <section className="row align-items-center">
+                {/* <span className="">header</span> */}
+                <div className= 'col align-self-center'>
                     {isLoggedIn() ?
                         <>
-                            <li>Hello, {getProfile().first}</li>
-                            <li><Link onClick={() => logout()} to='/'>Logout</Link></li>
+                            <h1 id='h1'>Welcome Back, {getProfile().first}</h1>
+                            <Clock></Clock>
                         </>
                         :
                         <>
-                            {/* <li><button><Link to="/signup">Signup</Link></button></li> */}
-                            {/* <li><button><Link to="/login">Login</Link></button></li> */}
+                            
                         </>
                     }
 
-                </ul>
-            </div>
-        </nav>
+                </div>
+            </section>
+        </main>
 
     );
 };

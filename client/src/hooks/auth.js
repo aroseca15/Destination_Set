@@ -1,13 +1,14 @@
 import createPersistedState from 'use-persisted-state';
 import jwtDecode from 'jwt-decode';
 import axios from 'axios';
-
+// import { useHistory } from 'react-router-dom';
 const tokenState = createPersistedState('token');
 const userState = createPersistedState('user');
 
 const useAuth = () => {
     const [token, setToken] = tokenState('');
     const [user, setUser] = userState({});
+    
 
     const login = async (email, password) => {
         return axios.post('api/auth/login',
@@ -34,13 +35,17 @@ const useAuth = () => {
     };
 
     const logout = () => {
+        // let history = useHistory();
         // Clean out the header
         axios.defaults.headers.common.Authorization = null;
         setToken('');
         setUser({});
         // Clean out state
         // We are forcing a reload to prevent old state from existing post logout.
-        window.location.reload('/');
+        // window.location.reload('/');
+        // localStorage.removeItem('token');
+
+        // history.push('/login');
     };
 
     // call to check if a token is too old
