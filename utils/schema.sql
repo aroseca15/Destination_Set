@@ -1,28 +1,32 @@
 
 USE destination_set;
 
--- CREATE TABLE business (
---     id INTEGER AUTO_INCREMENT NOT NULL,
---     PRIMARY KEY(id)
--- );
+CREATE TABLE business (
+    id INTEGER AUTO_INCREMENT NOT NULL,
+    newAquiz TEXT,
+    clients TEXT,
+    meetings TEXT,
+    meetingTime INTEGER,
+    PRIMARY KEY(id)
+);
 
--- CREATE TABLE leisure (
---     id INTEGER AUTO_INCREMENT NOT NULL,
---     PRIMARY KEY(id)
--- );
+CREATE TABLE leisure (
+    id INTEGER AUTO_INCREMENT NOT NULL,
+    PRIMARY KEY(id)
+);
 
--- CREATE TABLE destinations (
---     id INTEGER AUTO_INCREMENT NOT NULL,
---     city TEXT (50),
---     country TEXT (50),
---     latitude TEXT,
---     longitude TEXT,
---     languageUsed TEXT (50),
---     currency TEXT (50),
---     currencySymbol TEXT (50),
---     body TEXT,
---     PRIMARY KEY (id)
--- );
+CREATE TABLE destinations (
+    id INTEGER AUTO_INCREMENT NOT NULL,
+    city TEXT (50),
+    country TEXT (50),
+    latitude TEXT,
+    longitude TEXT,
+    languageUsed TEXT (50),
+    currency TEXT (50),
+    currencySymbol TEXT (50),
+    body TEXT,
+    PRIMARY KEY (id)
+);
 
 -- DROP TABLE IF EXISTS destinations;
 
