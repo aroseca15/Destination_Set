@@ -11,7 +11,6 @@ import Notes from './pages/Notes';
 import Destination from './pages/Destination';
 import Business from './pages/Business';
 
-
 function App() {
     // Pull auth token from storage, in case you refresh the page
     const { getToken, logout } = useAuth();
@@ -38,9 +37,7 @@ function App() {
         <Router>
             <Navbar />
             <Switch>
-                <Route exact path='/'>
-                    <Header />
-                    <Home />
+                <Route exact path='/' component= {Home}>
                 </Route>
                 <Route path='/signup'>
                     <Signup />
@@ -48,13 +45,12 @@ function App() {
                 <Route path='/login'>
                     <Login />
                 </Route>
-                <PrivateRoute exact path='/destination'>
-                    <Header />
+                <PrivateRoute exact path='/destinations'>
+                    {/* <Header /> */}
                     <Destination />
                 </PrivateRoute>
                 {/* <Route path='/route/:id' exact component={MyComponent} /> */}
-                <PrivateRoute exact path='/business/:city'>
-                    <Header />
+                <PrivateRoute exact path='/business'>
                     <Business />
                 </PrivateRoute>
                 <PrivateRoute exact path='/notes'>

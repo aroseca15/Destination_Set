@@ -17,15 +17,22 @@ function Business() {
 
         <div className='App'>
 
-            <div className='searches'>
+            <main className='container'>
                 {isLoggedIn() ?
                     <>
                         <li>Hello, {getProfile().first}</li>
                         <li><Link onClick={() => logout()} to='/'>Logout</Link></li>
-                        <div className='card'>
-                            <h1>TESTING</h1>
-                            <p>TESTING</p>
-                        </div>
+                        <section className='row'>
+
+                        </section>
+
+                        <section className='row'>
+
+                        </section>
+                        
+                        <section className='row'>
+
+                        </section>
                     </>
                     :
                     <>
@@ -34,7 +41,7 @@ function Business() {
                         <li><button><Link to="/login">Login</Link></button></li> */}
                     </>
                 }
-            </div>
+            </main>
 
 
         </div>

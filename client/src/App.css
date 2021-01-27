@@ -7,6 +7,8 @@
     background-color: cornsilk;
 }
 
+
+
 #fillIn{
   font-family: 'Times New Roman', Times, serif;
   font-weight: 600;
@@ -47,15 +49,47 @@ font-size: larger;
   font-size: larger;
 }
 
+.row{
+  /* margin-left: 20px; */
+  margin-bottom: 20px;
+}
+
+#schedule{
+  /* margin-left: 500px; */
+  font-family: 'Times New Roman', Times, serif;
+  font-weight: 500;
+}
+
+.dateTime{
+  font-family: 'Times New Roman', Times, serif;
+  font-weight: 500;
+  font-size: larger;
+}
+
+#currentDay{
+  /* display: inline-block; */
+  /* margin-right: 20px */
+}
+
+#currentTime{
+  /* display: inline-block; */
+}
+
 #notes{
   text-align: center;
   font-family: 'Times New Roman', Times, serif;
   font-weight: 900;
-  background-color: bisque;
-  max-width: 18rem;
+  background-color: rgba(85, 107, 47, 0.341);
+  max-width: 25rem;
 }
 
-
+#aquiz{
+  text-align: center;
+  font-family: 'Times New Roman', Times, serif;
+  font-weight: 900;
+  background-color: bisque;
+  max-width: 25rem;
+}
 
 /* Photo Credits: Paris- www.vactualpapers.com   Rio De Janeiro- www.freewalkertours.com/   London- www.youtube.com    New York- www.istockphoto.com  */
 /* .icons{

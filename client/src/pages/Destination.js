@@ -1,9 +1,8 @@
-// import { Redirect, useHistory, useLocation } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 // import { useState } from 'react';
-// import Business from './Business';
 
-function Destination() {
+const Destination = () => {
     // const history = useHistory();
     // const location = useLocation();
     // const city = [city, setCity] = useState();
@@ -36,15 +35,43 @@ function Destination() {
                     state: { from: '/destination' }
                 }}
                 />}>Rio De Janeiro</button> */}
-                <button>London</button>
-                <button>NYC</button>
+                {/* <img src=''></img> */}
+                <Link to={{
+                    pathname: '/',
+                    linkDestination: {
+                        name: 'Paris',
+                    }
+                }}>Paris</Link><br />
 
+                {/* <img src=''></img> */}
+                <Link to={{
+                    pathname: '/',
+                    linkDestination: {
+                        name: 'London',
+                    }
+                }}>London</Link><br />
+
+                {/* <img src=''></img> */}
+                <Link to={{
+                    pathname: '/',
+                    linkDestination: {
+                        name: 'Rio De Janeiro',
+                    }
+                }}>Rio De Janeiro</Link><br />
+
+                {/* <img src=''></img> */}
+                <Link to={{
+                    pathname: '/',
+                    linkDestination: {
+                        name: 'NYC',
+                    }
+                }}>NYC</Link>
             </div>
 
             {/* {selectCity ? <Business city={cityName} /> : <div></div>} */}
         </div >
 
     );
-}
+};
 
 export default Destination;
