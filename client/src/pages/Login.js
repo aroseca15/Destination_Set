@@ -12,7 +12,7 @@ const Login = () => {
     // For our redirector
     const [redirectToSignup, toggleRedirect] = useState(false);
     // This is the key part to our redirector. We can pull the prior location out here, if it exists
-    const { from } = location.state || { from: { pathname: '/' } };
+    const { from } = location.state || { from: { pathname: '/destinations' } };
 
     const handleSubmit = event => {
         event.preventDefault();
@@ -22,7 +22,7 @@ const Login = () => {
     };
 
     if (isLoggedIn()) {
-        return <Redirect to={location.state || '/'} />;
+        return <Redirect to={location.state || '/destinations'} />;
     }
 
     if (redirectToSignup) {

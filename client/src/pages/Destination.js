@@ -3,6 +3,7 @@ import London from '../assets/images/London1.jpg';
 import Paris from '../assets/images/Paris1.jpg';
 import RioDeJaneiro from '../assets/images/RioDeJaneiro.jpg';
 import NYC from '../assets/images/New York1.jpg';
+import Header from '../components/Header';
 
 // import { useState } from 'react';
 
@@ -26,6 +27,7 @@ const Destination = () => {
         <main className='App'>
 
             <div className='icons'>
+                <Header></Header>
                 <section className='row align-items-center '>
                     <div className='col align-self-center'>
                         <img src={Paris} width={500} height={400} alt="Paris" /><br />

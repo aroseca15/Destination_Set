@@ -3,8 +3,6 @@ import useAuth from '../hooks/auth';
 
 const Navbar = () => {
     const { isLoggedIn, logout } = useAuth();
-    let history = useHistory();
-    
     return (
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
             <div class="container-fluid">

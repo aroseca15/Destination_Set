@@ -1,5 +1,5 @@
 import Navbar from './components/Navbar';
-import Header from './components/Header';
+// import Header from './components/Header';
 import './App.css';
 import { BrowserRouter as Router, Switch, Route, Redirect } from 'react-router-dom';
 import axios from 'axios';
@@ -54,7 +54,6 @@ function App() {
                     <Business />
                 </PrivateRoute>
                 <PrivateRoute exact path='/notes'>
-                    <Header />
                     <Notes />
                 </PrivateRoute>
             </Switch>

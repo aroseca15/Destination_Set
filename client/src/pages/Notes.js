@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import axios from 'axios';
 import NoteForm from '../components/NoteForm';
 import AquizForm from '../components/AquizForm';
-
+import Header from '../components/Header';
 
 // import Calender from '../components/Calender';
 
@@ -46,7 +46,10 @@ const Notes = function () {
     };
 
     return (
-        <main className= 'container'>
+        <main className='container-fluid'>
+            <div className='row align-items-center'>
+                <Header></Header>
+            </div>
             <section className='row align-items-start'>
                 <div className='card col align-self-start' id='notes'>
                     <h2>Important Meeting Notes</h2>
@@ -64,7 +67,7 @@ const Notes = function () {
                 </div>
 
                 <div className="dateTime">
-                    <h1 id='schedule' className="display-4">Today's</h1>
+                    <h1 id='schedule' className="display-4">Today's News and Weather </h1>
                 </div>
             </section>
             <section className='row'>

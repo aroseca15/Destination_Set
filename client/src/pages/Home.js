@@ -1,6 +1,7 @@
 import useAuth from '../hooks/auth';
 import { Link } from 'react-router-dom';
 import Clock from '../components/Clock';
+import SpillCofLaptop from '../assets/images/SpilledCoffeeLaptop.jpg';
 
 
 // import { useState } from 'react';
@@ -45,24 +46,47 @@ function Home(props) {
                         <div className='col align-self-end'>
                             <h1 id='h1'>Welcome Back, {getProfile().first}</h1>
                             <Clock></Clock>
-                            {/* <h2>{props.location.linkDestination.name}</h2> */}
+                            <h2>{props.location.linkDestination.name}</h2>
+                        </div>
+                    </section>
+                    <section className='row align-items-center '>
+                        <div id='visa' className='card col align-self-end'>
+                            <h4 id='h1'>VISA Information: <button className='btn btn-info'><Link id='btnText' to={{
+                                pathname: 'https://visadb.io/search',
+                            }}>Click Here </Link></button></h4>
+
+
                         </div>
                     </section>
 
                     <section className='row'>
                         <div id='notes' className='card col align-self-start'>
-                            <p>TESTING</p>
-                            <p>TESTING</p>
+                            <p>YOUR CURRENT DESTINATION: {props.location.linkDestination.name}</p>
+                            <p></p>
                         </div>
+
                         <div id='notes' className='card col align-self-end'>
-                            <p>TESTING</p>
-                            <p>TESTING</p>
+                            <p>Common Language Used: {props.location.linkDestination.language}</p>
+                            <p>Currency in Used: {props.location.linkDestination.currency}</p>
                         </div>
                     </section>
+                    <section className='row'>
+                        <div id='notes' className='card col align-self-start'>
+                            <p>TRANSLATE BOX</p>
+                            <p></p>
+                        </div>
+
+                        <div id='notes' className='card col align-self-end'>
+                            <p>CURRENCY CONVERT CALCULATOR</p>
+                            <p></p>
+                        </div>
+                    </section>
+                    <div></div>
                     <div>
-                        <Link to={{
+                        <img src={SpillCofLaptop} width={300} height={300} alt="Spilled Coffee Laptop" /><br />
+                        <button className='btn btn-warning'><Link id='btnText' to={{
                             pathname: '/business',
-                        }}>Solutions to the Unexpected</Link><br />
+                        }}>Expected Solutions to the Unexpected</Link></button><br />
                     </div>
                 </>
                 :
