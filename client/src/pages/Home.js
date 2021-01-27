@@ -1,5 +1,8 @@
 import useAuth from '../hooks/auth';
 import { Link } from 'react-router-dom';
+import Clock from '../components/Clock';
+
+
 // import { useState } from 'react';
 // import { axios } from 'axios';
 
@@ -31,23 +34,31 @@ import { Link } from 'react-router-dom';
 function Home(props) {
 
     console.log(props.location.linkDestination);
-    const { isLoggedIn, getProfile } = useAuth();
+    const { isLoggedIn, getProfile, } = useAuth();
+
     return (
-        <main className='App'>
+        <main className='App container'>
 
             {isLoggedIn() ?
                 <>
-                    <section className='row'>
-                        <div>
+                    <section className='row align-items-center '>
+                        <div className='col align-self-end'>
                             <h1 id='h1'>Welcome Back, {getProfile().first}</h1>
+                            <Clock></Clock>
                             {/* <h2>{props.location.linkDestination.name}</h2> */}
                         </div>
                     </section>
 
-                    <div className='card'>
-                        <h1>TESTING</h1>
-                        <p>TESTING</p>
-                    </div>
+                    <section className='row'>
+                        <div id='notes' className='card col align-self-start'>
+                            <p>TESTING</p>
+                            <p>TESTING</p>
+                        </div>
+                        <div id='notes' className='card col align-self-end'>
+                            <p>TESTING</p>
+                            <p>TESTING</p>
+                        </div>
+                    </section>
                     <div>
                         <Link to={{
                             pathname: '/business',
