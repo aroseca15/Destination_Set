@@ -6,6 +6,8 @@ import DestinSet from '../assets/images/DestinSet.jpg';
 import { Redirect } from 'react-router-dom';
 import { useState } from 'react';
 
+// import banner from '../assets/images/Header_Business.jpg';
+
 
 // import { useState } from 'react';
 // import { axios } from 'axios';
@@ -38,6 +40,9 @@ import { useState } from 'react';
 function Home(props) {
 
     console.log(props.location.linkDestination);
+    // const name = '';
+
+    // const locationOfBusinessman = props.location.linkDestination.name;
     const { isLoggedIn, getProfile } = useAuth();
     // const [redirectToSignup, toggleRedirect] = useState(false);
     // const location = useLocation();
@@ -68,18 +73,16 @@ function Home(props) {
 
             {isLoggedIn() ?
                 <>
-                    <section className='row align-items-center '>
+                    <section id='Bbanner' className='row align-items-center '>
                         <div className='col align-self-end'>
-                            <h1 id='h1'>Welcome Back, {getProfile().first}</h1>
+                            <h1 id='BbannerText'>Welcome Back, {getProfile().first}</h1>
                             <Clock></Clock>
-                            <h2>{props.location.linkDestination.name}</h2>
+                            <h2 id='BbannerText'>{props.location.linkDestination.name}</h2>
                         </div>
                     </section>
                     <section className='row align-items-center '>
                         <div id='visa' className='card col align-self-end'>
-                            <h4 id='h1'>VISA Information: <button className='btn btn-info'><Link id='btnText' to={{
-                                pathname: 'https://visadb.io/search',
-                            }}>Click Here </Link></button></h4>
+                            <h4 id='h1'>VISA Information: <a href='https://visadb.io/search'><button id='btnText' className='btn btn-info'>Click Here</button></a></h4>
 
 
                         </div>
@@ -112,19 +115,24 @@ function Home(props) {
                         <img src={SpillCofLaptop} width={300} height={300} alt="Spilled Coffee Laptop" /><br />
                         <button className='btn btn-warning'><Link id='btnText' to={{
                             pathname: '/business',
+                            linkDestination: {
+                                name: 'New York City',
+                                language: 'English',
+                                currency: 'USD: $'
+                            }
                         }}>Expected Solutions to the Unexpected</Link></button><br />
                     </div>
                 </>
                 :
                 <>
                     <form>
-                        <h1 id='h1'>
+                        <h1 className='display-2' id='h1'>
                             Welcome to Destination Set
                         </h1>
                         <img src={DestinSet} width={800} height={300} class="img-fluid" alt="Destination Set"></img>
                         <p id='loginP'>
                             New Here? <button className="btn btn-light" id='btn-signup' onClick={() => toggleRedirectS(true)}>Signup</button>
-                            <button id='btn-login' className="btn btn-light" type='submit'onClick={() => toggleRedirectL(true)}>Login</button>
+                            <button id='btn-login' className="btn btn-light" type='submit' onClick={() => toggleRedirectL(true)}>Login</button>
                         </p>
 
                     </form>

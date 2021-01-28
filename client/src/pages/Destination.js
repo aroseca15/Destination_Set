@@ -24,14 +24,14 @@ const Destination = () => {
 
     return (
 
-        <main className='App'>
+        <main className='App container'>
 
             <div className='icons'>
                 <Header></Header>
                 <section className='row align-items-center '>
                     <div className='col align-self-center'>
                         <img src={Paris} width={500} height={400} alt="Paris" /><br />
-                        <Link to={{
+                        <Link id='btnText' to={{
                             pathname: '/',
                             linkDestination: {
                                 name: 'Paris',
@@ -41,7 +41,7 @@ const Destination = () => {
                         }}>Paris</Link><br />
 
                         <img src={London} width={500} height={400} alt="London" /><br />
-                        <Link to={{
+                        <Link id='btnText' to={{
                             pathname: '/',
                             linkDestination: {
                                 name: 'London',
@@ -54,7 +54,7 @@ const Destination = () => {
 
                     <div className='col align-self-center'>
                         <img src={RioDeJaneiro} width={500} height={400} alt="Rio De Janeiro" /><br />
-                        <Link to={{
+                        <Link id='btnText' to={{
                             pathname: '/',
                             linkDestination: {
                                 name: 'Rio De Janeiro',
@@ -64,7 +64,7 @@ const Destination = () => {
                         }}>Rio De Janeiro</Link><br />
 
                         <img src={NYC} width={500} height={400} alt="New York City" /><br />
-                        <Link to={{
+                        <Link id='btnText' to={{
                             pathname: '/',
                             linkDestination: {
                                 name: 'New York City',

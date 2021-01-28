@@ -14,7 +14,8 @@
 
 #btnText{
   color: black;
-  /* font-weight: 300; */
+  font-size: larger;
+  font-weight: bolder;
 }
 
 #fillIn{
@@ -62,6 +63,7 @@ font-size: larger;
   margin-bottom: 20px;
 }
 
+/* CSS for Notes Page: */
 #schedule{
   /* margin-left: 500px; */
   font-family: 'Times New Roman', Times, serif;
@@ -75,14 +77,6 @@ font-size: larger;
   margin-left: 400px;
 }
 
-#currentDay{
-  /* display: inline-block; */
-  /* margin-right: 20px */
-}
-
-#currentTime{
-  /* display: inline-block; */
-}
 
 #notes{
   text-align: center;
@@ -102,10 +96,21 @@ font-size: larger;
 
 /* Business Search Page CSS: */
 #Bbanner{
-  max-width: 1500px;
-  max-height: 200px;
+ background-image: url('./assets/images/Header_Business.jpg');
 }
 
+#BbannerText{
+  margin-bottom: 40px;
+  font-family: 'Times New Roman', Times, serif;
+  font-weight: 600;
+  color: antiquewhite;
+}
+.overlay{
+  margin-top: 50px;
+}
+#searchI{
+  margin-top: 30px;
+}
 /* Photo Credits: Paris- www.vactualpapers.com   Rio De Janeiro- www.freewalkertours.com/   London- www.youtube.com    New York- www.istockphoto.com  */
 /* .icons{
   
