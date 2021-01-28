@@ -1,9 +1,8 @@
-// import { useState } from 'react';
-// import { Redirect, useHistory, useLocation } from 'react-router-dom';
+import clothes from '../assets/images/Wardrobe_Search.jpg';
+import techU from '../assets/images/tech_upgrade.jpg';
+import Header from '../components/Header';
 import useAuth from '../hooks/auth';
-import { Link } from 'react-router-dom';
-// import Destination from './Destination';
-
+// import { Link } from 'react-router-dom';
 
 function Business() {
     // if (Destination.params.id === 1) {
@@ -12,18 +11,22 @@ function Business() {
     // const history = useHistory();
     // const location = useLocation();
     // onClick={() => toggleRedirect(true)}
-    const { isLoggedIn, logout, getProfile } = useAuth();
+    const { isLoggedIn } = useAuth();
     return (
 
         <div className='App'>
-
+            {/* width={1000} height={50}  */}
+            {/* Try Using container-fluid for banner */}
             <main className='container'>
                 {isLoggedIn() ?
                     <>
-                        <li>Hello, {getProfile().first}</li>
-                        <li><Link onClick={() => logout()} to='/'>Logout</Link></li>
+                        <Header></Header>
+                        <h1>Need a Tech Upgrate or Repair?</h1>
+                        <img id='clothes' src={clothes} class="img-fluid" alt="Destination Set"></img><br/>
+                        <h1>Need a Tech Upgrate or Repair?</h1>
+                        <img id='tech' src={techU} class="img-fluid" alt="Destination Set"></img>
                         <section className='row'>
-                           
+                            {/* <button>Click Here!</button> */}
                         </section>
 
                         <section className='row'>

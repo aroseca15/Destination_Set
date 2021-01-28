@@ -100,6 +100,12 @@ font-size: larger;
   max-width: 25rem;
 }
 
+/* Business Search Page CSS: */
+#Bbanner{
+  max-width: 1500px;
+  max-height: 200px;
+}
+
 /* Photo Credits: Paris- www.vactualpapers.com   Rio De Janeiro- www.freewalkertours.com/   London- www.youtube.com    New York- www.istockphoto.com  */
 /* .icons{
   

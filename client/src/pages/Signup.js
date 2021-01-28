@@ -71,7 +71,7 @@ const Signup = () => {
     };
 
     if (isLoggedIn()) {
-        return <Redirect to={location.state || '/'} />;
+        return <Redirect to={location.state || '/destinations'} />;
     }
 
     if (redirectToLogin) {

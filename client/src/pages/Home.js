@@ -2,6 +2,9 @@ import useAuth from '../hooks/auth';
 import { Link } from 'react-router-dom';
 import Clock from '../components/Clock';
 import SpillCofLaptop from '../assets/images/SpilledCoffeeLaptop.jpg';
+import DestinSet from '../assets/images/DestinSet.jpg';
+import { Redirect } from 'react-router-dom';
+import { useState } from 'react';
 
 
 // import { useState } from 'react';
@@ -35,7 +38,30 @@ import SpillCofLaptop from '../assets/images/SpilledCoffeeLaptop.jpg';
 function Home(props) {
 
     console.log(props.location.linkDestination);
-    const { isLoggedIn, getProfile, } = useAuth();
+    const { isLoggedIn, getProfile } = useAuth();
+    // const [redirectToSignup, toggleRedirect] = useState(false);
+    // const location = useLocation();
+    const [RedirectToLogin, toggleRedirectL] = useState(false);
+    const [RedirectToSignup, toggleRedirectS] = useState(false);
+    const { from } = { from: { pathname: '/' } };
+    if (RedirectToLogin) {
+        // If someone goes to login, this transfers the redirect
+        return <Redirect to={{
+            pathname: '/login',
+            state: { from: from }
+        }}
+        />;
+    }
+
+    if (RedirectToSignup) {
+        return <Redirect to={{
+            // If someone goes to signup, this transfers the redirect
+            pathname: '/signup',
+            state: { from: from }
+        }}
+        />;
+    }
+
 
     return (
         <main className='App container'>
@@ -95,10 +121,12 @@ function Home(props) {
                         <h1 id='h1'>
                             Welcome to Destination Set
                         </h1>
-                        {/* <p id='loginP'>
-                            New Here? <button className="btn btn-light" id='btn-signup' onClick={() => toggleRedirect(true)}>Signup</button>
-                            <button id='btn-login' className="btn btn-light" type='submit'>Login</button>
-                        </p> */}
+                        <img src={DestinSet} width={800} height={300} class="img-fluid" alt="Destination Set"></img>
+                        <p id='loginP'>
+                            New Here? <button className="btn btn-light" id='btn-signup' onClick={() => toggleRedirectS(true)}>Signup</button>
+                            <button id='btn-login' className="btn btn-light" type='submit'onClick={() => toggleRedirectL(true)}>Login</button>
+                        </p>
+
                     </form>
 
                 </>
@@ -110,4 +138,3 @@ function Home(props) {
 
 export default Home;
 
-// {props.name}
