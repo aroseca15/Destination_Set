@@ -31,8 +31,6 @@ import { useState } from 'react';
 //             console.log(error);
 //         });
 // }
-// import { useState } from 'react';
-
 
 function Home(props) {
 
@@ -72,7 +70,6 @@ function Home(props) {
         }}
         />;
     }
-
 
     return (
         <main className='App container'>

@@ -73,6 +73,7 @@ font-size: larger;
   font-family: 'Times New Roman', Times, serif;
   font-weight: 500;
   margin-left: 55px;
+  margin-top: 20px;
 }
 
 .dateTime{
@@ -89,6 +90,7 @@ font-size: larger;
   font-weight: 900;
   background-color: rgba(85, 107, 47, 0.341);
   max-width: 25rem;
+  margin-top: 50px;
 }
 
 #aquiz{
@@ -102,7 +104,6 @@ font-size: larger;
 /* Business Search Page CSS: */
 #Bbanner{
  background-image: url('./assets/images/Header_Business.jpg');
- margin-bottom: 40px;
 }
 
 #BbannerText{

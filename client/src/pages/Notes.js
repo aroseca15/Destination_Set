@@ -60,7 +60,6 @@ const Notes = function () {
                 <section id='Bbanner' className='row1 align-items-center '>
                     <div style={style} className='col align-self-end'>
                         <h1 id='BbannerText'>Welcome Back, {getProfile().first}</h1>
-                        <h2 id='BbannerText'></h2>
                     </div>
                 </section>
                 <section className='row align-items-start'>
@@ -78,7 +77,7 @@ const Notes = function () {
                         </ol>
                         <NoteForm didSubmit={refreshParent} />
                     </div>
-
+        
                     <div className="dateTime">
                         <h1 id='schedule' className="display-4">Today's News and Weather </h1>
                         <Calender></Calender>

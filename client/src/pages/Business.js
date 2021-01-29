@@ -40,12 +40,11 @@ function Business(props) {
                         <section className='row align-items-center'>
                             <div className='col align-self-start'>
                                 <figure className="overlay">
-                                    <h1></h1>
                                     <h1 id='h1'>Need a Tech Upgrate or Repair?</h1>
                                     <img id='tech' src={techU} class="img-fluid" alt="Destination Set"></img>
 
                                     <div id='searchI' className='iconCenter'>
-                                        <button type="button" className="btn btn-info"><img id='tech' src={searchI} width={50} class="img-fluid" alt="Destination Set"></img></button>
+                                        <a href={`https://www.google.com/search?q=computer+store+phone+repair+${destination.country}+${destination.city}`} rel='noreferrer' target='_blank' class="btn btn-info"><img id='tech' src={searchI} width={50} className="img-fluid" alt="Destination Set"></img></a>
                                     </div>
                                 </figure>
                             </div>
@@ -57,7 +56,7 @@ function Business(props) {
                                     <h1 id='h1'>Need a Quick Wardrobe Solution?</h1>
                                     <img id='clothes' src={clothes} className="img-fluid" alt="Destination Set"></img><br />
                                     <div className='iconCenter' id='searchI'>
-                                        <button type="button" class="btn btn-info"><img id='tech' src={searchI} width={50} className="img-fluid" alt="Destination Set"></img></button>
+                                        <a href={`https://www.google.com/search?q=business+clothing+store+${destination.country}+${destination.city}`} rel='noreferrer' target='_blank' class="btn btn-info"><img id='tech' src={searchI} width={50} className="img-fluid" alt="Destination Set"></img></a>
                                     </div>
                                 </figure>
                             </div>
