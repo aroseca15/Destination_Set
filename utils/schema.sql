@@ -6,7 +6,8 @@ CREATE TABLE business (
     newAquiz TEXT,
     clients TEXT,
     meetings TEXT,
-    meetingTime INTEGER,
+    meetingTime TEXT,
+    body TEXT,
     PRIMARY KEY(id)
 );
 

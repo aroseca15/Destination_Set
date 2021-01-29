@@ -46,11 +46,9 @@ function App() {
                     <Login />
                 </Route>
                 <PrivateRoute exact path='/destinations'>
-                    {/* <Header /> */}
                     <Destination />
                 </PrivateRoute>
-                {/* <Route path='/route/:id' exact component={MyComponent} /> */}
-                <PrivateRoute exact path='/business'>
+                <PrivateRoute exact path='/business/:id'>
                     <Business />
                 </PrivateRoute>
                 <PrivateRoute exact path='/notes'>

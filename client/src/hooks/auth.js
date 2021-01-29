@@ -42,7 +42,7 @@ const useAuth = () => {
         setUser({});
         // Clean out state
         // We are forcing a reload to prevent old state from existing post logout.
-        // window.location.reload('/');
+        window.location.reload('/');
         // localStorage.removeItem('token');
 
         // history.push('/login');

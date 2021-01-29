@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from 'react';
 
-export const DateTime = () => {
+export const Clock = () => {
     const [date, setDate] = useState(new Date());
 
     useEffect(() => {
 
-        const time = setInterval(() => setDate(new Date()), 60000);
+        const time = setInterval(() => setDate(new Date()), 1000);
         return function cleanup() {
             clearInterval(time);
         };
@@ -13,7 +13,7 @@ export const DateTime = () => {
 
     return (
         <div>
-            <h4 id='h1'>
+            <h4 id='BbannerText'>
                 {date.toLocaleDateString()} <br />
                 {date.toLocaleTimeString()}
             </h4>
@@ -21,4 +21,4 @@ export const DateTime = () => {
     );
 };
 
-export default DateTime; 
+export default Clock; 

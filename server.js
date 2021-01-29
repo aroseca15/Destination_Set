@@ -1,4 +1,5 @@
 require('dotenv').config();
+const csv = require('csvtojson');
 
 // Configuration check.
 // Disable this at your own risk
@@ -41,8 +42,18 @@ app.get('*', (req, res) => {
     res.sendFile(path.join(__dirname, './client/build/index.html'));
 });
 
-db.sequelize.sync({force:false}).then(function () {
+db.sequelize.sync({ force: false }).then(function () {
     app.listen(PORT, function () {
+        db.Destinations.findAll().then(destinations => {
+            if (destinations.length === 0) {
+                csv().fromFile(__dirname + '/DestinationT.csv').then(destinations => {
+                    db.Destinations.bulkCreate(destinations).then(() => {
+                        console.log('load from file.')
+                    })
+                })
+
+            }
+        })
         console.log(`Server now on port ${PORT}!`);
     });
 });

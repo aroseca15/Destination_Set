@@ -71,7 +71,7 @@ const Signup = () => {
     };
 
     if (isLoggedIn()) {
-        return <Redirect to={location.state || '/'} />;
+        return <Redirect to={location.state || '/destinations'} />;
     }
 
     if (redirectToLogin) {
@@ -85,7 +85,7 @@ const Signup = () => {
 
     return (
         <div className='App'>
-            <h2 id= 'h1'>
+            <h2 id='h1'>
                 Signup Page
             </h2>
 
@@ -117,7 +117,6 @@ const Signup = () => {
                     name='dob'
                     placeholder='MM/DD/YYYY'
                     type='dob'
-                    autoComplete='username'
                     value={dob}
                     onChange={event => setDob(event.target.value)}
                 />
@@ -127,6 +126,7 @@ const Signup = () => {
                     name='securityQ'
                     placeholder='Pet Name'
                     type='securityQ'
+                    autoComplete='securityQ'
                     value={securityQ}
                     onChange={event => setSecurityQ(event.target.value)}
                 />
