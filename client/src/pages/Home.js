@@ -6,9 +6,6 @@ import DestinSet from '../assets/images/DestinSet.jpg';
 import { Redirect } from 'react-router-dom';
 import { useState } from 'react';
 
-// import banner from '../assets/images/Header_Business.jpg';
-
-
 // import { useState } from 'react';
 // import { axios } from 'axios';
 
@@ -66,6 +63,15 @@ function Home(props) {
         }}
         />;
     }
+    if (isLoggedIn() && !props.location.linkDestination) {
+        
+        return <Redirect to={{
+            // If someone goes to signup, this transfers the redirect
+            pathname: '/destinations',
+            state: { from: from }
+        }}
+        />;
+    }
 
 
     return (
@@ -114,12 +120,8 @@ function Home(props) {
                     <div>
                         <img src={SpillCofLaptop} width={300} height={300} alt="Spilled Coffee Laptop" /><br />
                         <button className='btn btn-warning'><Link id='btnText' to={{
-                            pathname: '/business',
-                            linkDestination: {
-                                name: 'New York City',
-                                language: 'English',
-                                currency: 'USD: $'
-                            }
+                            pathname: '/business/'+ props.location.linkDestination.id,
+                            
                         }}>Expected Solutions to the Unexpected</Link></button><br />
                     </div>
                 </>

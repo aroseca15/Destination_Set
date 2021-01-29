@@ -3,6 +3,10 @@ import techU from '../assets/images/tech_upgrade.jpg';
 import searchI from '../assets/images/search_icon.jpg';
 import Header from '../components/Header';
 import useAuth from '../hooks/auth';
+import { useParams } from 'react-router-dom';
+import { useState, useEffect } from 'react';
+import axios from 'axios';
+
 // import { Link } from 'react-router-dom';
 
 function Business(props) {
@@ -13,12 +17,22 @@ function Business(props) {
     // const history = useHistory();
     // const location = useLocation();
     // onClick={() => toggleRedirect(true)}
+    const { id } = useParams();
     const { isLoggedIn } = useAuth();
-    return (
+    const [destination, setDestination] = useState({});
 
+    function fetchDestination() {
+        axios.get('/api/destinations/' + id).then(({ data }) => {
+            setDestination(data);
+        });
+    }
+
+    useEffect(() => {
+        fetchDestination();
+    }, []);
+    console.log(destination);
+    return (
         < div className='App container' >
-            {/* width={1000} height={50}  */}
-            {/* Try Using container-fluid for banner */}
             <main className='container'>
                 {isLoggedIn() ?
                     <>
@@ -26,11 +40,12 @@ function Business(props) {
                         <section className='row align-items-center'>
                             <div className='col align-self-start'>
                                 <figure className="overlay">
+                                    <h1></h1>
                                     <h1 id='h1'>Need a Tech Upgrate or Repair?</h1>
                                     <img id='tech' src={techU} class="img-fluid" alt="Destination Set"></img>
 
                                     <div id='searchI' className='iconCenter'>
-                                        <button type="button" class="btn btn-info"><img id='tech' src={searchI} width={50} class="img-fluid" alt="Destination Set"></img></button>
+                                        <button type="button" className="btn btn-info"><img id='tech' src={searchI} width={50} class="img-fluid" alt="Destination Set"></img></button>
                                     </div>
                                 </figure>
                             </div>
@@ -70,7 +85,7 @@ function Business(props) {
 
 export default Business;
 // {/* <img id='clothes' src={searchI} width={50} class="img-fluid" alt="Destination Set"></img> */ }
-{/* <figure class="overlay">
+/* <figure class="overlay">
           <a href="/employee"><img id="employee" class="icons shadow"
               src="/icons/employee-working-icon-vector-20994542.jpg" alt="employee management" height="300px"
               width="100%">
@@ -78,4 +93,4 @@ export default Business;
               <div class="text">Manage Employees</div>
             </div>
           </a>
-        </figure> */}
+        </figure> */

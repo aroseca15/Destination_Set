@@ -58,16 +58,21 @@ font-size: larger;
   font-size: larger;
 }
 
+
 .row{
-  /* margin-left: 20px; */
+  margin-left: 20px;
   margin-bottom: 20px;
 }
 
 /* CSS for Notes Page: */
+#headNotesBanner{
+  margin-left: 700px;
+}
+
 #schedule{
-  /* margin-left: 500px; */
   font-family: 'Times New Roman', Times, serif;
   font-weight: 500;
+  margin-left: 55px;
 }
 
 .dateTime{
@@ -97,6 +102,7 @@ font-size: larger;
 /* Business Search Page CSS: */
 #Bbanner{
  background-image: url('./assets/images/Header_Business.jpg');
+ margin-bottom: 40px;
 }
 
 #BbannerText{
