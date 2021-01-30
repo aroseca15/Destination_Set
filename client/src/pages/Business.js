@@ -7,16 +7,8 @@ import { useParams } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import axios from 'axios';
 
-// import { Link } from 'react-router-dom';
-
 function Business(props) {
-    console.log(props);
-    // if (Destination.params.id === 1) {
-    //     console.log('Paris');
-    // }
-    // const history = useHistory();
-    // const location = useLocation();
-    // onClick={() => toggleRedirect(true)}
+    // console.log(props);
     const { id } = useParams();
     const { isLoggedIn } = useAuth();
     const [destination, setDestination] = useState({});
@@ -83,13 +75,3 @@ function Business(props) {
 
 
 export default Business;
-// {/* <img id='clothes' src={searchI} width={50} class="img-fluid" alt="Destination Set"></img> */ }
-/* <figure class="overlay">
-          <a href="/employee"><img id="employee" class="icons shadow"
-              src="/icons/employee-working-icon-vector-20994542.jpg" alt="employee management" height="300px"
-              width="100%">
-            <div class="textCenter">
-              <div class="text">Manage Employees</div>
-            </div>
-          </a>
-        </figure> */
