@@ -24,7 +24,8 @@ router.post('/login', async (req, res) => {
             process.env.SECRET,
             {
                 expiresIn: '24h',
-                algorithm: 'HS256'
+                algorithm: 'HS256',
+
             }
         );
         // send token and user data back. Selecting only certain parts of the user
@@ -32,11 +33,7 @@ router.post('/login', async (req, res) => {
             token, user: {
                 id: user.id,
                 email: user.email,
-                first: user.first,
-                phone: user.phone,
-                dob: user.dob,
-                securityQ: user.securityQ,
-                contact: user.contact
+                first: user.first, phone: user.phone, dob: user.dob, securityQ: user.securityQ, contact: usercontact
             }
         });
     } catch (err) {
@@ -46,7 +43,7 @@ router.post('/login', async (req, res) => {
 });
 
 // Route for signing up a user.
-// We create a user, tossing back an error fi it fails    
+// We create a user, tossing back an error fi it fails
 router.post('/signup', async (req, res) => {
     try {
         const { email, password, first, last, phone, dob, securityQ, contact } = req.body;
@@ -78,11 +75,7 @@ router.post('/signup', async (req, res) => {
             token, user: {
                 id: user.id,
                 email: user.email,
-                first: user.first,
-                phone: user.phone,
-                dob: user.dob,
-                securityQ: user.securityQ,
-                contact: user.contact
+                first: user.first, phone: user.phone, dob: user.dob, securityQ: user.securityQ, contact: user.contact
             }
         });
     } catch (err) {
