@@ -1,3 +1,5 @@
+DROP DATABASE IF EXISTS destination_set;
+CREATE DATABASE destination_set;
 
 USE destination_set;
 
