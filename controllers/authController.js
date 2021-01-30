@@ -20,18 +20,20 @@ router.post('/login', async (req, res) => {
         }
         // Create JWT token
         const token = await signAsync(
-            { id: user.id, email: user.email, first: user.first, phone: user.phone, dob: user.dob, securityQ: user.securityQ, contact: user.contact },
+            { id: user.id, email: user.email },
             process.env.SECRET,
             {
                 expiresIn: '24h',
-                algorithm: 'HS256'
+                algorithm: 'HS256',
+
             }
         );
         // send token and user data back. Selecting only certain parts of the user
         res.json({
             token, user: {
                 id: user.id,
-                email: user.email
+                email: user.email,
+                first: user.first, phone: user.phone, dob: user.dob, securityQ: user.securityQ, contact: usercontact
             }
         });
     } catch (err) {
@@ -41,7 +43,7 @@ router.post('/login', async (req, res) => {
 });
 
 // Route for signing up a user.
-// We create a user, tossing back an error fi it fails    
+// We create a user, tossing back an error fi it fails
 router.post('/signup', async (req, res) => {
     try {
         const { email, password, first, last, phone, dob, securityQ, contact } = req.body;
@@ -61,7 +63,7 @@ router.post('/signup', async (req, res) => {
         }
         // Create JWT token
         const token = await signAsync(
-            { id: user.id, email: user.email, first: user.first, phone: user.phone, dob: user.dob, securityQ: user.securityQ, contact: user.contact },
+            { id: user.id, email: user.email },
             process.env.SECRET,
             {
                 expiresIn: '24h',
@@ -72,7 +74,8 @@ router.post('/signup', async (req, res) => {
         res.json({
             token, user: {
                 id: user.id,
-                email: user.email
+                email: user.email,
+                first: user.first, phone: user.phone, dob: user.dob, securityQ: user.securityQ, contact: user.contact
             }
         });
     } catch (err) {
