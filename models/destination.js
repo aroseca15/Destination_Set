@@ -1,6 +1,6 @@
 module.exports = function (sequelize, DataTypes) {
     const Destinations = sequelize.define('Destinations', {
-        id: { 
+        id: {
             allowNull: false,
             autoIncrement: true,
             primaryKey: true,
@@ -8,18 +8,18 @@ module.exports = function (sequelize, DataTypes) {
         },
 
         city: {
-            type: DataTypes.STRING, 
+            type: DataTypes.STRING,
             allowNull: false,
-            
+
         },
 
         country: {
-            type: DataTypes.STRING, 
+            type: DataTypes.STRING,
             allowNull: false,
         },
 
         latitude: {
-            type: DataTypes.STRING, 
+            type: DataTypes.STRING,
             allowNull: false,
             validate: {
                 len: [1, 60]
@@ -27,7 +27,7 @@ module.exports = function (sequelize, DataTypes) {
         },
 
         longitude: {
-            type: DataTypes.STRING, 
+            type: DataTypes.STRING,
             allowNull: false,
             validate: {
                 len: [1, 60]
@@ -35,20 +35,19 @@ module.exports = function (sequelize, DataTypes) {
         },
 
         languageUsed: {
-            type: DataTypes.STRING, 
+            type: DataTypes.STRING,
             allowNull: false,
         },
 
         currency: {
-            type: DataTypes.TEXT, 
+            type: DataTypes.TEXT,
             allowNull: false
         },
 
         currencySymbol: {
-            type: DataTypes.TEXT, 
+            type: DataTypes.TEXT,
             allowNull: false
         },
-
 
 
         body: {
@@ -57,7 +56,6 @@ module.exports = function (sequelize, DataTypes) {
         }
     });
 
-    
 
     return Destinations;
 };

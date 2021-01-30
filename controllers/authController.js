@@ -43,7 +43,7 @@ router.post('/login', async (req, res) => {
 });
 
 // Route for signing up a user.
-// We create a user, tossing back an error fi it fails    
+// We create a user, tossing back an error fi it fails
 router.post('/signup', async (req, res) => {
     try {
         const { email, password, first, last, phone, dob, securityQ, contact } = req.body;

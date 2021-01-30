@@ -48,12 +48,12 @@ db.sequelize.sync({ force: false }).then(function () {
             if (destinations.length === 0) {
                 csv().fromFile(__dirname + '/DestinationT.csv').then(destinations => {
                     db.Destinations.bulkCreate(destinations).then(() => {
-                        console.log('load from file.')
-                    })
-                })
+                        console.log('load from file.');
+                    });
+                });
 
             }
-        })
+        });
         console.log(`Server now on port ${PORT}!`);
     });
 });

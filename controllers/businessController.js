@@ -7,7 +7,7 @@ router.get('/business', isAuthenticated, function(req, res) {
     db.Destinations.findAll(req.query)
         .then(dbModel => res.json(dbModel))
         .catch(err => res.status(422).json(err));
-    console.log("I am res!")
+    console.log('I am res!');
 });
 
 // router.post('/', isAuthenticated, function(req, res) {

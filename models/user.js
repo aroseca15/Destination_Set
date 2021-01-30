@@ -5,49 +5,49 @@ const bcrypt = require('bcryptjs');
 module.exports = function (sequelize, DataTypes) {
     const User = sequelize.define(
         'User', {
-        first: {
-            type: DataTypes.STRING,
-            allowNull: false
-        },
-        last: {
-            type: DataTypes.STRING,
-            allowNull: false
-        },
+            first: {
+                type: DataTypes.STRING,
+                allowNull: false
+            },
+            last: {
+                type: DataTypes.STRING,
+                allowNull: false
+            },
 
-        phone: {
-            type: DataTypes.STRING,
-            allowNull: false
-        },
+            phone: {
+                type: DataTypes.STRING,
+                allowNull: false
+            },
 
-        dob: {
-            type: DataTypes.STRING,
-            allowNull: false
-        },
+            dob: {
+                type: DataTypes.STRING,
+                allowNull: false
+            },
 
-        securityQ: {
-            type: DataTypes.STRING,
-            allowNull: false
-        },
+            securityQ: {
+                type: DataTypes.STRING,
+                allowNull: false
+            },
 
-        contact: {
-            type: DataTypes.STRING,
-            allowNull: false
-        },
-        // The email cannot be null, and must be a proper email before creation
-        email: {
-            type: DataTypes.STRING,
-            allowNull: false,
-            unique: true,
-            validate: {
-                isEmail: true
+            contact: {
+                type: DataTypes.STRING,
+                allowNull: false
+            },
+            // The email cannot be null, and must be a proper email before creation
+            email: {
+                type: DataTypes.STRING,
+                allowNull: false,
+                unique: true,
+                validate: {
+                    isEmail: true
+                }
+            },
+            // The password cannot be null
+            password: {
+                type: DataTypes.STRING,
+                allowNull: false
             }
         },
-        // The password cannot be null
-        password: {
-            type: DataTypes.STRING,
-            allowNull: false
-        }
-    },
         {
             // This forces any default 'User' to exclude the password when we query them;
             // this way we don't expose even a hashed password
