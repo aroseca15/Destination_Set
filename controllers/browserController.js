@@ -4,7 +4,7 @@
 // router.get('/business', isAuthenticated, function (req, res) {
     
 // }
-import axios from 'axios';
+const axios = require('axios');
 
 axios({
     "method": "GET",

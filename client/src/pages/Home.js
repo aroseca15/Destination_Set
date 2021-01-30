@@ -125,7 +125,7 @@ function Home(props) {
                 :
                 <>
                     <form>
-                        <h1 className='display-2' id='h1'>
+                        <h1 className='display-4' id='h1'>
                             Welcome to Destination Set
                         </h1>
                         <img src={DestinSet} width={800} height={300} class="img-fluid" alt="Destination Set"></img>
