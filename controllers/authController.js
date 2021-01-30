@@ -20,7 +20,7 @@ router.post('/login', async (req, res) => {
         }
         // Create JWT token
         const token = await signAsync(
-            { id: user.id, email: user.email, first: user.first, phone: user.phone, dob: user.dob, securityQ: user.securityQ, contact: user.contact },
+            { id: user.id, email: user.email },
             process.env.SECRET,
             {
                 expiresIn: '24h',
@@ -31,7 +31,12 @@ router.post('/login', async (req, res) => {
         res.json({
             token, user: {
                 id: user.id,
-                email: user.email
+                email: user.email,
+                first: user.first,
+                phone: user.phone,
+                dob: user.dob,
+                securityQ: user.securityQ,
+                contact: user.contact
             }
         });
     } catch (err) {
@@ -61,7 +66,7 @@ router.post('/signup', async (req, res) => {
         }
         // Create JWT token
         const token = await signAsync(
-            { id: user.id, email: user.email, first: user.first, phone: user.phone, dob: user.dob, securityQ: user.securityQ, contact: user.contact },
+            { id: user.id, email: user.email },
             process.env.SECRET,
             {
                 expiresIn: '24h',
@@ -72,7 +77,12 @@ router.post('/signup', async (req, res) => {
         res.json({
             token, user: {
                 id: user.id,
-                email: user.email
+                email: user.email,
+                first: user.first,
+                phone: user.phone,
+                dob: user.dob,
+                securityQ: user.securityQ,
+                contact: user.contact
             }
         });
     } catch (err) {
