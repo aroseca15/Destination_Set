@@ -12,6 +12,21 @@
   
 }
 
+#translate{
+max-width: 270px;
+}
+
+#convertC{
+  max-width: 400rem;
+  margin-bottom: 80px;
+  
+}
+
+#CCC{
+  /* display: inline-block;
+  justify-content: flex-end; */
+}
+
 #btnText{
   color: black;
   font-size: larger;
@@ -29,6 +44,14 @@
   font-family: 'Times New Roman', Times, serif;
   font-weight: 600;
 }
+
+#loginH{
+  /* margin-right: 25px; */
+  margin-top: 50px;
+  font-family: 'Times New Roman', Times, serif;
+  font-weight: 600;
+  font-size: larger;
+  }
 
 #loginP{
 /* margin-right: 25px; */
