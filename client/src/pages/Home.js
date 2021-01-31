@@ -134,11 +134,11 @@ function Home(props) {
                 :
                 <>
                     <form>
-                        <h1 className='display-2' id='h1'>
+                        <h1 className='display-4' id='h1'>
                             Welcome to Destination Set
                         </h1>
-                        <img src={DestinSet} width={800} height={300} class="img-fluid" alt="Destination Set"></img>
-                        <p id='loginP'>
+                        <img src={DestinSet} width={700} height={200} class="img-fluid" alt="Destination Set"></img>
+                        <p id='loginH'>
                             New Here? <button className="btn btn-light" id='btn-signup' onClick={() => toggleRedirectS(true)}>Signup</button>
                             <button id='btn-login' className="btn btn-light" type='submit' onClick={() => toggleRedirectL(true)}>Login</button>
                         </p>
