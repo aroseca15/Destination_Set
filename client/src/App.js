@@ -15,8 +15,7 @@ function App() {
     // Pull auth token from storage, in case you refresh the page
     const { getToken, logout } = useAuth();
     axios.defaults.headers.common.Authorization = `Bearer ${getToken()}`;
-    console.log(getToken);
-
+    // console.log(getToken);
 
     // A nice trick that if we EVER get back a 401, will pop the token off
     axios.interceptors.response.use(response => {

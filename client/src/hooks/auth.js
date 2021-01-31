@@ -62,7 +62,7 @@ const useAuth = () => {
 
     // grab the encoded user data here
     const getProfile = () => {
-        return jwtDecode(user);
+        return user;
     };
 
     // call to get the token
