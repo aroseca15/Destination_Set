@@ -33,7 +33,11 @@ router.post('/login', async (req, res) => {
             token, user: {
                 id: user.id,
                 email: user.email,
-                first: user.first, phone: user.phone, dob: user.dob, securityQ: user.securityQ, contact: usercontact
+                first: user.first,
+                phone: user.phone,
+                dob: user.dob,
+                securityQ: user.securityQ,
+                contact: user.contact
             }
         });
     } catch (err) {
@@ -75,7 +79,11 @@ router.post('/signup', async (req, res) => {
             token, user: {
                 id: user.id,
                 email: user.email,
-                first: user.first, phone: user.phone, dob: user.dob, securityQ: user.securityQ, contact: user.contact
+                first: user.first,
+                phone: user.phone,
+                dob: user.dob,
+                securityQ: user.securityQ,
+                contact: user.contact
             }
         });
     } catch (err) {
