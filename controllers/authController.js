@@ -84,7 +84,7 @@ router.post('/signup', async (req, res) => {
                 dob: user.dob,
                 securityQ: user.securityQ,
                 contact: user.contact
-            },
+            }
         });
     } catch (err) {
         console.error(err);
