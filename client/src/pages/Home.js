@@ -1,6 +1,8 @@
 import useAuth from '../hooks/auth';
 import { Link } from 'react-router-dom';
 import Clock from '../components/Clock';
+import Translate from '../components/TranslateB';
+import Convert$ from '../components/Convert$';
 import SpillCofLaptop from '../assets/images/SpilledCoffeeLaptop.jpg';
 import DestinSet from '../assets/images/DestinSet.jpg';
 import { Redirect } from 'react-router-dom';
@@ -62,7 +64,7 @@ function Home(props) {
         />;
     }
     if (isLoggedIn() && !props.location.linkDestination) {
-        
+
         return <Redirect to={{
             // If someone goes to signup, this transfers the redirect
             pathname: '/destinations',
@@ -86,39 +88,46 @@ function Home(props) {
                     <section className='row align-items-center '>
                         <div id='visa' className='card col align-self-end'>
                             <h4 id='h1'>VISA Information: <a href='https://visadb.io/search'><button id='btnText' className='btn btn-info'>Click Here</button></a></h4>
-
-
+                        </div>
+                    </section>
+                    <section className='row'>
+                        <div className='col'>
+                            <h2>DANGER INFO SCALE API POST</h2>
                         </div>
                     </section>
 
                     <section className='row'>
-                        <div id='notes' className='card col align-self-start'>
+                        <div id='notes' className='card col-lg-8 align-self-start'>
                             <p>YOUR CURRENT DESTINATION: {props.location.linkDestination.name}</p>
                             <p></p>
                         </div>
+                        <div className='col'>
+                            <p></p>
+                        </div>
 
-                        <div id='notes' className='card col align-self-end'>
+                        <div id='notes' className='card col-lg-8 align-self-end'>
                             <p>Common Language Used: {props.location.linkDestination.language}</p>
                             <p>Currency in Used: {props.location.linkDestination.currency}</p>
                         </div>
                     </section>
                     <section className='row'>
-                        <div id='notes' className='card col align-self-start'>
-                            <p>TRANSLATE BOX</p>
+                        <div id='translate' className='col align-self-start'>
+                            {/* <p>TRANSLATE BOX</p> */}
+                            <Translate></Translate>
+                        </div>
+                        <div className='col'>
                             <p></p>
                         </div>
-
-                        <div id='notes' className='card col align-self-end'>
+                        <div id='convertC' className='card col align-self-end'>
                             <p>CURRENCY CONVERT CALCULATOR</p>
-                            <p></p>
+                            <Convert$></Convert$>
                         </div>
                     </section>
-                    <div></div>
                     <div>
                         <img src={SpillCofLaptop} width={300} height={300} alt="Spilled Coffee Laptop" /><br />
                         <button className='btn btn-warning'><Link id='btnText' to={{
-                            pathname: '/business/'+ props.location.linkDestination.id,
-                            
+                            pathname: '/business/' + props.location.linkDestination.id,
+
                         }}>Expected Solutions to the Unexpected</Link></button><br />
                     </div>
                 </>
