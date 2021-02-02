@@ -1,5 +1,5 @@
-city,country,latitude,longitude,languageUsed,currency,currencySymbol,body
-Paris,France,48.856613,2.352222,French,Euros,€,NULL
-Rio De Janeiro,Brazil,48.856613,2.352222,Brazilian Portuguese,Reais,R$,NULL
-London, United Kingdom, 51.507351,-0.127758,English,Pound Sterling ,£,NULL
-New York,United States,40.712776,-74.005974,English,USD ,$,NULL
+city,country,countryCode,latitude,longitude,languageUsed,currency,currencySymbol,body
+Paris,France,FR,48.856613,2.352222,French,Euros,€,NULL
+Rio De Janeiro,Brazil,BR,48.856613,2.352222,Brazilian Portuguese,Reais,R$,NULL
+London, United Kingdom,GB, 51.507351,-0.127758,English,Pound Sterling ,£,NULL
+New York,United States,US,40.712776,-74.005974,English,USD ,$,NULL

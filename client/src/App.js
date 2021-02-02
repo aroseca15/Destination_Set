@@ -13,7 +13,7 @@ import Business from './pages/Business';
 // import cors from 'cors';
 
 function App() {
-    
+
     // Pull auth token from storage, in case you refresh the page
     const { getToken, logout } = useAuth();
     axios.defaults.headers.common.Authorization = `Bearer ${getToken()}`;
@@ -40,7 +40,7 @@ function App() {
         <Router>
             <Navbar />
             <Switch>
-                <Route exact path='/' component= {Home}>
+                <Route exact path='/'>
                 </Route>
                 <Route path='/signup'>
                     <Signup />
@@ -50,6 +50,9 @@ function App() {
                 </Route>
                 <PrivateRoute exact path='/destinations'>
                     <Destination />
+                </PrivateRoute>
+                <PrivateRoute exact path='/home/:countryCode'>
+                    <Home />
                 </PrivateRoute>
                 <PrivateRoute exact path='/business/:id'>
                     <Business />

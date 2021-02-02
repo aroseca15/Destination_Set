@@ -7,6 +7,7 @@ import SpillCofLaptop from '../assets/images/SpilledCoffeeLaptop.jpg';
 import DestinSet from '../assets/images/DestinSet.jpg';
 import { Redirect } from 'react-router-dom';
 import { useState, useEffect } from 'react';
+// 
 import axios from 'axios';
 
 
@@ -34,7 +35,16 @@ import axios from 'axios';
 // }
 
 function Home(props) {
+    function fetchDestination() {
+        axios.get('/api/destinations/' + countryCode).then(({ data }) => {
+            setDestination(data);
+        });
+    }
 
+    useEffect(() => {
+        fetchDestination();
+    }, []);
+    console.log(destination);
     // console.log(props.location.linkDestination);
     const [countryApi, setCountryApi] = useState({ advisory: { message: '', className: '' } });
     useEffect(() => {
@@ -59,7 +69,7 @@ function Home(props) {
             }, err => { console.log(err); });
         console.log('After user effect', props);
     }, []);
-    
+    console.log(countryApi);
     const { isLoggedIn, getProfile } = useAuth();
     const [RedirectToLogin, toggleRedirectL] = useState(false);
     const [RedirectToSignup, toggleRedirectS] = useState(false);
@@ -108,7 +118,8 @@ function Home(props) {
                             <h4 id='h1'>VISA Information: <a href='https://visadb.io/search'><button id='btnText' className='btn btn-info'>Click Here</button></a></h4>
                         </div>
                     </section>
-                    <section className='row'>
+                    
+                    {/* <section className='row'>
                         <div className='col'>
                             <div className={`card border-${countryApi.advisory.className} mb-3`} >
                                 <div className= {`card-header ${countryApi.advisory.className}`}>Covid Index</div>
@@ -116,10 +127,9 @@ function Home(props) {
                                     <h5 className="card-title">{props.location.linkDestination.name}</h5>
                                     <p className="card-text">{countryApi.advisory.message}</p>
                                 </div>
-                                {/* <h2 className={countryApi.advisory.className}></h2> */}
                             </div>
                         </div>
-                    </section>
+                    </section> */}
 
                     <section className='row'>
                         <div id='notes' className='card col-lg-8 align-self-start'>
@@ -178,3 +188,4 @@ function Home(props) {
 
 export default Home;
 
+{/* <h2 className={countryApi.advisory.className}></h2> */}
