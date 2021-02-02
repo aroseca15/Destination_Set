@@ -1,5 +1,5 @@
-city,country,latitude,longitude,languageUsed,currency,currencySymbol,body
-Paris,France,48.856613,2.352222,French,Euros,€,NULL
-Rio De Janeiro,Brazil,48.856613,2.352222,Brazilian Portuguese,Reais,R$,NULL
-London, United Kingdom, 51.507351,-0.127758,English,Pound Sterling ,£,NULL
-New York,United States,40.712776,-74.005974,English,USD ,$,NULL
+city,country,latitude,longitude,languageUsed,currency,currencyRatePerUSD,currencySymbol,body
+'1', 'Paris', 'France', '48.856613', '2.352222', 'French', 'Euros', '0.83', '€', NULL
+'2', 'Rio De Janeiro ', 'Brazil', '48.856613', '2.352222', 'Brazilian Portuguese', 'Reais', '5.43', 'R$', NULL
+'3', 'London', 'United Kingdom', '51.507351', '-0.127758', 'English', 'Pound Sterling ', '0.73', '£', NULL
+'4', 'New York ', 'United States', '40.712776', '-74.005974', 'English', 'USD ', '1.00', '$', NULL

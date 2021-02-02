@@ -4,5 +4,5 @@
 
 
 
-// router.get('/business', isAuthenticated, function (req, res) {
+
 

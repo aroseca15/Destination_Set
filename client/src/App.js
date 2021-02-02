@@ -10,8 +10,10 @@ import Login from './pages/Login';
 import Notes from './pages/Notes';
 import Destination from './pages/Destination';
 import Business from './pages/Business';
+// import cors from 'cors';
 
 function App() {
+    
     // Pull auth token from storage, in case you refresh the page
     const { getToken, logout } = useAuth();
     axios.defaults.headers.common.Authorization = `Bearer ${getToken()}`;

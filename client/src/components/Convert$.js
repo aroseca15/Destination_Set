@@ -9,7 +9,7 @@ export const Convert$ = () => {
                     <div className='inputGroup'>
                         <span>$</span>
                         <input/>
-                        <span>AUD</span>
+                        <span>USD</span>
                     </div>
 
                 </div>
@@ -19,9 +19,11 @@ export const Convert$ = () => {
                         //Currency B input
                     }
                     <div>
-                        <span>$</span>
-                        <input/>
-                        <span>USD</span>
+                        
+                        <span>{}Symbol</span>
+                        <span>{} Calculated Amount</span>
+                        
+                        <span>{}</span>
                     </div>
 
                 </div>
@@ -32,7 +34,7 @@ export const Convert$ = () => {
                             //Update to currently selected currency
                         }
                         <p>
-                            Exchange Rate $ 1 AUD = $ 0.7041 USD
+                            Exchange Rate Measured Per $ 1 USD
                         </p>
                     </div>
                 </div>

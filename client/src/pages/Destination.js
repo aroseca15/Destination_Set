@@ -35,6 +35,7 @@ const Destination = () => {
                             pathname: '/',
                             linkDestination: {
                                 id: 1,
+                                countryCode: 'FR',
                                 name: 'Paris',
                                 language: 'French',
                                 currency: 'Euros: €'
@@ -46,6 +47,7 @@ const Destination = () => {
                             pathname: '/',
                             linkDestination: {
                                 id: 3,
+                                countryCode: 'GB',
                                 name: 'London',
                                 language: 'English',
                                 currency: 'Pound Sterling: £'
@@ -60,6 +62,7 @@ const Destination = () => {
                             pathname: '/',
                             linkDestination: {
                                 id: 2,
+                                countryCode: 'BR',
                                 name: 'Rio De Janeiro',
                                 language: 'Brazilian Portuguese',
                                 currency: 'Reais: R$'
@@ -71,6 +74,7 @@ const Destination = () => {
                             pathname: '/',
                             linkDestination: {
                                 id: 4,
+                                countryCode: 'US',
                                 name: 'New York City',
                                 language: 'English',
                                 currency: 'USD: $'

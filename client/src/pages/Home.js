@@ -6,10 +6,9 @@ import Convert$ from '../components/Convert$';
 import SpillCofLaptop from '../assets/images/SpilledCoffeeLaptop.jpg';
 import DestinSet from '../assets/images/DestinSet.jpg';
 import { Redirect } from 'react-router-dom';
-import { useState } from 'react';
+import { useState, } from 'react';
+// import axios from 'axios';
 
-// import { useState } from 'react';
-// import { axios } from 'axios';
 
 // async function callDestination() {
 //     const dataq = {
@@ -37,8 +36,16 @@ import { useState } from 'react';
 function Home(props) {
 
     console.log(props.location.linkDestination);
-    // const name = '';
-
+    // const [countryApi, setCountryApi] = useState(props.location.linkDestination.countryCode);
+    // useEffect(() => {
+    //     console.log('useeffect before axios', props);
+    //     axios.get(`https://cors-anywhere.herokuapp.com/https://www.travel-advisory.info/api?countrycode=${props.location.linkDestination.countryCode}`)
+    //         .then(res => {
+    //             console.log('AXIOS CALL', res);
+    //         });
+    //     console.log('After user effect', props);
+    // }, []);
+    // setCountryApi('');
     // const locationOfBusinessman = props.location.linkDestination.name;
     const { isLoggedIn, getProfile } = useAuth();
     // const [redirectToSignup, toggleRedirect] = useState(false);
@@ -112,7 +119,6 @@ function Home(props) {
                     </section>
                     <section className='row'>
                         <div id='translate' className='col align-self-start'>
-                            {/* <p>TRANSLATE BOX</p> */}
                             <Translate></Translate>
                         </div>
                         <div className='col'>
