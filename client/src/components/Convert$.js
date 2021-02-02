@@ -1,48 +1,62 @@
+// const convertCurrency = require('nodejs-currency-converter');
+// import ChooseCurrency from './ChooseCurrency';
 
-export const Convert$ = () => {
-    return (
-        <main id='CCC'>
-            <section className='row'>
-                <div className='col-md currencyInput'>
-                    <h3 className='flag'>Currency Input</h3>
-                    {/* Input goes here? */}
-                    <div className='inputGroup'>
-                        <span>$</span>
-                        <input/>
-                        <span>USD</span>
-                    </div>
+// HERE:
+// import data from '../data';
 
-                </div>
-                <div className="col-md">
-                    <h3>United States Dollars</h3>
-                    {
-                        //Currency B input
-                    }
-                    <div>
-                        
-                        <span>{}Symbol</span>
-                        <span>{} Calculated Amount</span>
-                        
-                        <span>{}</span>
-                    </div>
+// export const Convert$ = () => {
+//     let promise = '';
+//     promise = new Promise((resolve, reject) => {
+//         resolve('resolve');
+//         reject('reject');
 
-                </div>
+//     });
 
-                <div className="row">
-                    <div className="col-md-12">
-                        {
-                            //Update to currently selected currency
-                        }
-                        <p>
-                            Exchange Rate Measured Per $ 1 USD
-                        </p>
-                    </div>
-                </div>
+//     promise.then((msg) => {
+//         console.log('then = ' + msg);
+//     });
 
-            </section >
-        </main >
+//     promise.catch((msg) => {
+//         console.log('then = ' + msg);
+//     });
 
-    );
-};
+// convertCurrency(1, 'USD', 'BRL').then(response => response);
+// convertCurrency(1, 'EUR', 'BRL', '2015-08-29').then(response => response);
+// HERE:
+//     this.state = {
+//         currencies: data.currencies,
+//         currencyA: data.currencies[0],
+//         currencyB: data.currencies[1],
+//         sellA: data.currencies[0].sellRate,
+//         sellB: data.currencies[1].sellRate
+//     };
 
-export default Convert$;
+//     const { currencies } = this.state;
+
+//     onChooseCurrency(){
+//         console.log('You Have Selected')
+//     }
+
+//     return (
+//         <main id='CCC'>
+//             <ChooseCurrency currencies={currencies} onChooseCurrency={this.onChooseCurrency} />
+
+//             <section className='row'>
+//                 <div className="input-group mb-3">
+//                     <span className="input-group-text">$</span>
+//                     <input type="text" className="form-control" aria-label="Amount (to the nearest dollar)"></input>
+//                 </div>
+
+//                 <div className="input-group mb-3">
+//                     <span className="input-group-text">$</span>
+//                     <input type="text" className="form-control" aria-label="Amount (to the nearest dollar)"></input>
+//                 </div>
+//                 <button type="button" className="btn btn-secondary d-grid gap-2 col-6 mx-auto btn-outline-warning">Calculate Now!</button>
+//             </section >
+
+//         </main >
+
+//     );
+// };
+
+// export default Convert$;

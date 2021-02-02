@@ -44,11 +44,6 @@ module.exports = function (sequelize, DataTypes) {
             allowNull: false
         },
 
-        currencyRatePerUSD: {
-            type: DataTypes.DECIMAL, 
-            allowNull: false
-        },
-
         currencySymbol: {
             type: DataTypes.TEXT, 
             allowNull: false

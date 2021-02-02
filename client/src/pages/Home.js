@@ -2,12 +2,12 @@ import useAuth from '../hooks/auth';
 import { Link } from 'react-router-dom';
 import Clock from '../components/Clock';
 import Translate from '../components/TranslateB';
-import Convert$ from '../components/Convert$';
+// import Convert$ from '../components/Convert$';
 import SpillCofLaptop from '../assets/images/SpilledCoffeeLaptop.jpg';
 import DestinSet from '../assets/images/DestinSet.jpg';
 import { Redirect } from 'react-router-dom';
-import { useState, } from 'react';
-// import axios from 'axios';
+import { useState, useEffect } from 'react';
+import axios from 'axios';
 
 
 // async function callDestination() {
@@ -35,21 +35,32 @@ import { useState, } from 'react';
 
 function Home(props) {
 
-    console.log(props.location.linkDestination);
-    // const [countryApi, setCountryApi] = useState(props.location.linkDestination.countryCode);
-    // useEffect(() => {
-    //     console.log('useeffect before axios', props);
-    //     axios.get(`https://cors-anywhere.herokuapp.com/https://www.travel-advisory.info/api?countrycode=${props.location.linkDestination.countryCode}`)
-    //         .then(res => {
-    //             console.log('AXIOS CALL', res);
-    //         });
-    //     console.log('After user effect', props);
-    // }, []);
-    // setCountryApi('');
-    // const locationOfBusinessman = props.location.linkDestination.name;
+    // console.log(props.location.linkDestination);
+    const [countryApi, setCountryApi] = useState({ advisory: { message: '', className: '' } });
+    useEffect(() => {
+        console.log('useeffect before axios', props);
+        axios.get(`https://www.travel-advisory.info/api?countrycode=${props.location.linkDestination.countryCode}`)
+            .then(res => {
+                let data = '';
+                data = res.data.data;
+                let country = '';
+                country = data[props.location.linkDestination.countryCode];
+                country.advisory.className = 'danger';
+                if (country.advisory.score < 3) {
+                    country.advisory.className = 'low';
+                } else if (country.advisory.score < 3.5) {
+                    country.advisory.className = 'medium';
+                } else if (country.advisory.score < 4) {
+                    country.advisory.className = 'high';
+                } else if (country.advisory.score > 4.5) {
+                    country.advisory.className = 'extreme';
+                }
+                setCountryApi(country);
+            }, err => { console.log(err); });
+        console.log('After user effect', props);
+    }, []);
+    
     const { isLoggedIn, getProfile } = useAuth();
-    // const [redirectToSignup, toggleRedirect] = useState(false);
-    // const location = useLocation();
     const [RedirectToLogin, toggleRedirectL] = useState(false);
     const [RedirectToSignup, toggleRedirectS] = useState(false);
     const { from } = { from: { pathname: '/' } };
@@ -79,7 +90,7 @@ function Home(props) {
         }}
         />;
     }
-
+   
     return (
         <main className='App container'>
 
@@ -99,7 +110,14 @@ function Home(props) {
                     </section>
                     <section className='row'>
                         <div className='col'>
-                            <h2>DANGER INFO SCALE API POST</h2>
+                            <div className={`card border-${countryApi.advisory.className} mb-3`} >
+                                <div className= {`card-header ${countryApi.advisory.className}`}>Covid Index</div>
+                                <div className="card-body">
+                                    <h5 className="card-title">{props.location.linkDestination.name}</h5>
+                                    <p className="card-text">{countryApi.advisory.message}</p>
+                                </div>
+                                {/* <h2 className={countryApi.advisory.className}></h2> */}
+                            </div>
                         </div>
                     </section>
 
@@ -126,7 +144,7 @@ function Home(props) {
                         </div>
                         <div id='convertC' className='card col align-self-end'>
                             <p>CURRENCY CONVERT CALCULATOR</p>
-                            <Convert$></Convert$>
+                            {/* <Convert$></Convert$> */}
                         </div>
                     </section>
                     <div>
