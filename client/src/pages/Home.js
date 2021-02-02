@@ -35,6 +35,7 @@ import axios from 'axios';
 // }
 
 function Home(props) {
+    const [destination, setDestination] = useState({});
     function fetchDestination() {
         axios.get('/api/destinations/' + countryCode).then(({ data }) => {
             setDestination(data);
