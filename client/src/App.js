@@ -40,7 +40,7 @@ function App() {
         <Router>
             <Navbar />
             <Switch>
-                <Route exact path='/'>
+                <Route exact path='/'component={Home}>
                 </Route>
                 <Route path='/signup'>
                     <Signup />
@@ -51,9 +51,9 @@ function App() {
                 <PrivateRoute exact path='/destinations'>
                     <Destination />
                 </PrivateRoute>
-                <PrivateRoute exact path='/home/:countryCode'>
+                {/* <PrivateRoute exact path='/home/:countryCode'>
                     <Home />
-                </PrivateRoute>
+                </PrivateRoute> */}
                 <PrivateRoute exact path='/business/:id'>
                     <Business />
                 </PrivateRoute>

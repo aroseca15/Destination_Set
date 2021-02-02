@@ -2,54 +2,21 @@ import useAuth from '../hooks/auth';
 import { Link } from 'react-router-dom';
 import Clock from '../components/Clock';
 import Translate from '../components/TranslateB';
-// import Convert$ from '../components/Convert$';
+import Convert$ from '../components/Convert$';
 import SpillCofLaptop from '../assets/images/SpilledCoffeeLaptop.jpg';
 import DestinSet from '../assets/images/DestinSet.jpg';
 import { Redirect } from 'react-router-dom';
-import { useState, useEffect } from 'react';
-// 
+import { useState, useEffect} from 'react';
 import axios from 'axios';
 
 
-// async function callDestination() {
-//     const dataq = {
-//         'source': 'en',
-//         'q': 'Hello, world!',
-//         'target': ';es'
-//     };
-//     const headersq = {
-//         'content-type': 'application/x-www-form-urlencoded',
-//         'x-rapidapi-host': 'google-translate1.p.rapidapi.com',
-//         'x-rapidapi-key': '2ec7e6775cmsh5864e9b8b1fc24cp1e4a90jsn0d8cfe5c5551',
-//         'accept-encoding': 'application/gzip',
-//         'useQueryString': true
-//     };
-//     await axios.post('https://google-translate1.p.rapidapi.com/language/translate/v2', dataq, {
-//         headers: headersq
-//     }).then((response) => {
-//         console.log(response);
-//     })
-//         .catch((error) => {
-//             console.log(error);
-//         });
-// }
-
 function Home(props) {
-    const [destination, setDestination] = useState({});
-    function fetchDestination() {
-        axios.get('/api/destinations/' + countryCode).then(({ data }) => {
-            setDestination(data);
-        });
-    }
-
-    useEffect(() => {
-        fetchDestination();
-    }, []);
-    console.log(destination);
-    // console.log(props.location.linkDestination);
     const [countryApi, setCountryApi] = useState({ advisory: { message: '', className: '' } });
     useEffect(() => {
-        console.log('useeffect before axios', props);
+        // console.log('useeffect before axios', props);
+        if(!props.location.linkDestination){
+            return;
+        }
         axios.get(`https://www.travel-advisory.info/api?countrycode=${props.location.linkDestination.countryCode}`)
             .then(res => {
                 let data = '';
@@ -101,7 +68,7 @@ function Home(props) {
         }}
         />;
     }
-   
+
     return (
         <main className='App container'>
 
@@ -120,7 +87,7 @@ function Home(props) {
                         </div>
                     </section>
                     
-                    {/* <section className='row'>
+                    <section className='row'>
                         <div className='col'>
                             <div className={`card border-${countryApi.advisory.className} mb-3`} >
                                 <div className= {`card-header ${countryApi.advisory.className}`}>Covid Index</div>
@@ -130,7 +97,7 @@ function Home(props) {
                                 </div>
                             </div>
                         </div>
-                    </section> */}
+                    </section>
 
                     <section className='row'>
                         <div id='notes' className='card col-lg-8 align-self-start'>
@@ -155,7 +122,7 @@ function Home(props) {
                         </div>
                         <div id='convertC' className='card col align-self-end'>
                             <p>CURRENCY CONVERT CALCULATOR</p>
-                            {/* <Convert$></Convert$> */}
+                            <Convert$></Convert$>
                         </div>
                     </section>
                     <div>
@@ -190,3 +157,26 @@ function Home(props) {
 export default Home;
 
 {/* <h2 className={countryApi.advisory.className}></h2> */}
+
+// async function callDestination() {
+//     const dataq = {
+//         'source': 'en',
+//         'q': 'Hello, world!',
+//         'target': ';es'
+//     };
+//     const headersq = {
+//         'content-type': 'application/x-www-form-urlencoded',
+//         'x-rapidapi-host': 'google-translate1.p.rapidapi.com',
+//         'x-rapidapi-key': '2ec7e6775cmsh5864e9b8b1fc24cp1e4a90jsn0d8cfe5c5551',
+//         'accept-encoding': 'application/gzip',
+//         'useQueryString': true
+//     };
+//     await axios.post('https://google-translate1.p.rapidapi.com/language/translate/v2', dataq, {
+//         headers: headersq
+//     }).then((response) => {
+//         console.log(response);
+//     })
+//         .catch((error) => {
+//             console.log(error);
+//         });
+// }
