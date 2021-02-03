@@ -1,6 +1,6 @@
 import Navbar from './components/Navbar';
-// import Header from './components/Header';
 import './App.css';
+// import '../node_modules/bulma/css/bulma.min.css';
 import { BrowserRouter as Router, Switch, Route, Redirect } from 'react-router-dom';
 import axios from 'axios';
 import useAuth from './hooks/auth';
@@ -10,7 +10,8 @@ import Login from './pages/Login';
 import Notes from './pages/Notes';
 import Destination from './pages/Destination';
 import Business from './pages/Business';
-// import cors from 'cors';
+import './assets/stylesheetsComponents/Calender.css';
+import './assets/stylesheetsComponents/Convert$.css';
 
 function App() {
 

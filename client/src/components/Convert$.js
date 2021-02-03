@@ -5,7 +5,7 @@ export const Convert$ = () => {
     const userInputRef = useRef();
     const convertedPostRef = useRef();
     const [currency, setCurrency] = useState('USD');
-    console.log(currency);
+    // console.log(currency);
     return (
         <main id='CCC'>
             {/*First row is an input where user puts in amount in us dollars. User then makes a selection of currency symbol from drop down and the value is past to next row in convertedPostRef.   */}

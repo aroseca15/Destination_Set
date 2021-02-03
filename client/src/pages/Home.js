@@ -13,7 +13,6 @@ import axios from 'axios';
 function Home(props) {
     const [countryApi, setCountryApi] = useState({ advisory: { message: '', className: '' } });
     useEffect(() => {
-        // console.log('useeffect before axios', props);
         if(!props.location.linkDestination){
             return;
         }
