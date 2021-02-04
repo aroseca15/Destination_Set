@@ -138,7 +138,7 @@ function Home(props) {
                         <h1 className='display-4' id='h1'>
                             Welcome to Destination Set
                         </h1>
-                        <img src={DestinSet} width={700} height={200} class="img-fluid" alt="Destination Set"></img>
+                        <img src={DestinSet} width={700} height={200} className="img-fluid" alt="Destination Set"></img>
                         <p id='loginH'>
                             New Here? <button className="btn btn-light" id='btn-signup' onClick={() => toggleRedirectS(true)}>Signup</button>
                             <button id='btn-login' className="btn btn-light" type='submit' onClick={() => toggleRedirectL(true)}>Login</button>
@@ -155,7 +155,7 @@ function Home(props) {
 
 export default Home;
 
-{/* <h2 className={countryApi.advisory.className}></h2> */}
+/* <h2 className={countryApi.advisory.className}></h2> */
 
 // async function callDestination() {
 //     const dataq = {

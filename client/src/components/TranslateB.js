@@ -17,7 +17,7 @@ export const Translate = () => {
     return (
         <main className='container'>
             <section className='row'>
-                <select onChange={(event) => { setLang(event.currentTarget.value); }}>
+                <select defaultValue='en' onChange={(event) => { setLang(event.currentTarget.value); }}>
                     <option value="af">Afrikaans</option>
                     <option value="sq">Albanian</option>
                     <option value="am">Amharic</option>
@@ -38,7 +38,7 @@ export const Translate = () => {
                     <option value="cs">Czech</option>
                     <option value="da">Danish</option>
                     <option value="nl">Dutch</option>
-                    <option value="en" selected>English</option>
+                    <option value="en">English</option>
                     <option value="eo">Esperanto</option>
                     <option value="et">Estonian</option>
                     <option value="fi">Finnish</option>
@@ -130,7 +130,7 @@ export const Translate = () => {
                 </select>
             </section>
             <section className='row'>
-                <textarea value={inputText} placeholder='outgoing text to translate' onChange={(event) => { setInputText(event.currentTarget.value);}}></textarea>
+                <textarea value={inputText} placeholder='outgoing text to translate' onChange={(event) => { setInputText(event.currentTarget.value); }}></textarea>
             </section>
 
             <section className='row'>
