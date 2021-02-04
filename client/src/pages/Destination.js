@@ -35,9 +35,10 @@ const Destination = () => {
                             pathname: '/',
                             linkDestination: {
                                 id: 1,
+                                countryCode: 'FR',
                                 name: 'Paris',
                                 language: 'French',
-                                currency: 'Euros: €'
+                                currency: 'Euros €'
                             }
                         }}>Paris</Link><br />
 
@@ -46,9 +47,10 @@ const Destination = () => {
                             pathname: '/',
                             linkDestination: {
                                 id: 3,
+                                countryCode: 'GB',
                                 name: 'London',
                                 language: 'English',
-                                currency: 'Pound Sterling: £'
+                                currency: 'Pound Sterling £'
                             }
                         }}>London</Link><br />
                     </div>
@@ -60,9 +62,10 @@ const Destination = () => {
                             pathname: '/',
                             linkDestination: {
                                 id: 2,
+                                countryCode: 'BR',
                                 name: 'Rio De Janeiro',
                                 language: 'Brazilian Portuguese',
-                                currency: 'Reais: R$'
+                                currency: 'Reais R$'
                             }
                         }}>Rio De Janeiro</Link><br />
 
@@ -71,9 +74,10 @@ const Destination = () => {
                             pathname: '/',
                             linkDestination: {
                                 id: 4,
+                                countryCode: 'US',
                                 name: 'New York City',
                                 language: 'English',
-                                currency: 'USD: $'
+                                currency: 'USD $'
                             }
                         }}>NYC</Link>
                     </div>

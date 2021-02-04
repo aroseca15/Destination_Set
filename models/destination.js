@@ -18,6 +18,12 @@ module.exports = function (sequelize, DataTypes) {
             allowNull: false,
         },
 
+        countryCode: {
+            type: DataTypes.STRING, 
+            allowNull: false,
+            
+        },
+
         latitude: {
             type: DataTypes.STRING, 
             allowNull: false,

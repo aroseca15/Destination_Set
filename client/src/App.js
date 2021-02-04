@@ -1,6 +1,6 @@
 import Navbar from './components/Navbar';
-// import Header from './components/Header';
 import './App.css';
+// import '../node_modules/bulma/css/bulma.min.css';
 import { BrowserRouter as Router, Switch, Route, Redirect } from 'react-router-dom';
 import axios from 'axios';
 import useAuth from './hooks/auth';
@@ -10,8 +10,11 @@ import Login from './pages/Login';
 import Notes from './pages/Notes';
 import Destination from './pages/Destination';
 import Business from './pages/Business';
+import './assets/stylesheetsComponents/Calender.css';
+import './assets/stylesheetsComponents/Convert$.css';
 
 function App() {
+
     // Pull auth token from storage, in case you refresh the page
     const { getToken, logout } = useAuth();
     axios.defaults.headers.common.Authorization = `Bearer ${getToken()}`;
@@ -38,7 +41,7 @@ function App() {
         <Router>
             <Navbar />
             <Switch>
-                <Route exact path='/' component= {Home}>
+                <Route exact path='/'component={Home}>
                 </Route>
                 <Route path='/signup'>
                     <Signup />
@@ -49,6 +52,9 @@ function App() {
                 <PrivateRoute exact path='/destinations'>
                     <Destination />
                 </PrivateRoute>
+                {/* <PrivateRoute exact path='/home/:countryCode'>
+                    <Home />
+                </PrivateRoute> */}
                 <PrivateRoute exact path='/business/:id'>
                     <Business />
                 </PrivateRoute>

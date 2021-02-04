@@ -1,24 +1,62 @@
-// import moment from 'moment';
-// import { useState } from 'react';
+
+import { Fragment } from 'react';
+import CalenderHook from '../hooks/calender';
+import '../assets/stylesheetsComponents/Calender.css';
 // https://www.yelp.com/
+
 export const Calender = () => {
-    // const days = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31];
-    // const days_leap = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30];
-    // const days_of_wk = ['Sunday', 'Monday', 'Tuesday', 'Wedensday', 'Thursday', 'Friday', 'Saturday'];
-    // const months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
-    
-    
-    const style = {
-        width: '14.2%'
-        // padding: '30px',
-        // display: 'flex',
-        // alignItems: 'center',
-        // justifyContent: 'center',
+    const { calenderRows, selectedDate, todayFormatted, daysShort, monthNames, getNextMonth, getPrevMonth } = CalenderHook();
+    const dateClickHandler = date => {
+        console.log(date);
     };
-    // style props to check: isToday   isSelected
+
+    console.log(daysShort);
     return (
         <main className='container'>
-            <section className='row align-items-start'>
+            <Fragment>
+                <p>Selected Month: {`${monthNames[selectedDate.getMonth()]}-${selectedDate.getFullYear()}`}</p>
+                <table className='table calender'>
+                    <thead>
+                        <tr>
+                            {daysShort.map(day => {
+                                console.log(day);
+                                return (<th key={day}>{day}</th>);
+                            })}
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {
+                            Object.values(calenderRows).map(cols => {
+                                return <tr key={cols[0].date}>
+                                    {cols.map(col => (
+                                        col.date === todayFormatted
+                                            ? <td key={col.date} className={`${col.classes} today`} onClick={() => dateClickHandler(col.date)}>{col.day}</td>
+                                            : <td key={col.date} className={col.classes} onClick={() => dateClickHandler(col.date)}>{col.day}</td>
+                                    ))}
+                                </tr>;
+                            })
+                        }
+                    </tbody>
+                </table>
+                <button className='button' onClick={getPrevMonth}>Previous</button>
+                <button className='button' onClick={getNextMonth}>Next</button>
+            </Fragment>
+        </main>
+
+
+    );
+};
+
+export default Calender;
+
+// const style = {
+//     width: '14.2%'
+//     padding: '30px',
+//     display: 'flex',
+//     alignItems: 'center',
+//     justifyContent: 'center',
+// };
+{/* <section className='row align-items-start'>
                 <div className='col'></div>
                 <div className='col'></div>
                 <div className='col'></div>
@@ -41,11 +79,4 @@ export const Calender = () => {
                 <div style={style} className='col'>day</div>
                 <div style={style} className='col'>day</div>
                 <div style={style} className='col'>day</div>
-            </section>
-        </main>
-
-
-    );
-};
-
-export default Calender;
+            </section> */}

@@ -77,7 +77,7 @@ const Notes = function () {
                         </ol>
                         <NoteForm didSubmit={refreshParent} />
                     </div>
-        
+                    
                     <div className="dateTime">
                         <h1 id='schedule' className="display-4">Today's News and Weather </h1>
                         <Calender></Calender>
