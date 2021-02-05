@@ -27,7 +27,7 @@ router.post('/translate', function (req, res) {
         url: 'https://google-translate20.p.rapidapi.com/translate',
         headers: {
             'content-type': 'application/x-www-form-urlencoded',
-            'x-rapidapi-key': 'cb99ffe4b8msh202505c739c96ccp1bcf8ejsn316c3096288a',
+            'x-rapidapi-key': process.env.TRANSLATE_KEY,
             'x-rapidapi-host': 'google-translate20.p.rapidapi.com'
         },
         data: {
