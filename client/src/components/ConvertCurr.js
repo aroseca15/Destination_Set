@@ -1,7 +1,7 @@
 import { useState, useRef } from 'react';
 import data from '../data';
 
-export const Convert$ = () => {
+export const ConvertCurr = () => {
     const userInputRef = useRef();
     const convertedPostRef = useRef();
     const [currency, setCurrency] = useState('USD');
@@ -41,7 +41,7 @@ export const Convert$ = () => {
 };
 
 
-export default Convert$;
+export default ConvertCurr;
 
 // To Be use with npm currency converter package:
 //let promise = '';

@@ -21,7 +21,7 @@ function Business(props) {
 
     useEffect(() => {
         fetchDestination();
-    }, []);
+    }, []); // eslint-disable-line
     console.log(destination);
     return (
         < div className='App container' >

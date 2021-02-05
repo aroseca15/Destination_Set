@@ -1,6 +1,7 @@
 import Navbar from './components/Navbar';
 import './App.css';
-// import '../node_modules/bulma/css/bulma.min.css';
+// 
+
 import { BrowserRouter as Router, Switch, Route, Redirect } from 'react-router-dom';
 import axios from 'axios';
 import useAuth from './hooks/auth';
@@ -11,7 +12,7 @@ import Notes from './pages/Notes';
 import Destination from './pages/Destination';
 import Business from './pages/Business';
 import './assets/stylesheetsComponents/Calender.css';
-import './assets/stylesheetsComponents/Convert$.css';
+import './assets/stylesheetsComponents/ConvertCurr.css';
 
 function App() {
 

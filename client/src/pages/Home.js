@@ -2,18 +2,18 @@ import useAuth from '../hooks/auth';
 import { Link } from 'react-router-dom';
 import Clock from '../components/Clock';
 import Translate from '../components/TranslateB';
-import Convert$ from '../components/Convert$';
+import ConvertCurr from '../components/ConvertCurr';
 import SpillCofLaptop from '../assets/images/SpilledCoffeeLaptop.jpg';
 import DestinSet from '../assets/images/DestinSet.jpg';
 import { Redirect } from 'react-router-dom';
-import { useState, useEffect} from 'react';
+import { useState, useEffect } from 'react';
 import axios from 'axios';
 
 
 function Home(props) {
     const [countryApi, setCountryApi] = useState({ advisory: { message: '', className: '' } });
     useEffect(() => {
-        if(!props.location.linkDestination){
+        if (!props.location.linkDestination) {
             return;
         }
         axios.get(`https://www.travel-advisory.info/api?countrycode=${props.location.linkDestination.countryCode}`)
@@ -35,7 +35,7 @@ function Home(props) {
                 setCountryApi(country);
             }, err => { console.log(err); });
         console.log('After user effect', props);
-    }, []);
+    }, []); // eslint-disable-line
     console.log(countryApi);
     const { isLoggedIn, getProfile } = useAuth();
     const [RedirectToLogin, toggleRedirectL] = useState(false);
@@ -85,11 +85,11 @@ function Home(props) {
                             <h4 id='h1'>VISA Information: <a href='https://visadb.io/search'><button id='btnText' className='btn btn-info'>Click Here</button></a></h4>
                         </div>
                     </section>
-                    
+
                     <section className='row'>
                         <div className='col'>
                             <div className={`card border-${countryApi.advisory.className} mb-3`} >
-                                <div className= {`card-header ${countryApi.advisory.className}`}>Covid Index</div>
+                                <div className={`card-header ${countryApi.advisory.className}`}>Covid Index</div>
                                 <div className="card-body">
                                     <h5 className="card-title">{props.location.linkDestination.name}</h5>
                                     <p className="card-text">{countryApi.advisory.message}</p>
@@ -121,7 +121,7 @@ function Home(props) {
                         </div>
                         <div id='convertC' className='card col align-self-end'>
                             <p>CURRENCY CONVERT CALCULATOR</p>
-                            <Convert$></Convert$>
+                            <ConvertCurr></ConvertCurr>
                         </div>
                     </section>
                     <div>
@@ -134,17 +134,14 @@ function Home(props) {
                 </>
                 :
                 <>
-                    <form>
-                        <h1 className='display-4' id='h1'>
-                            Welcome to Destination Set
-                        </h1>
-                        <img src={DestinSet} width={700} height={200} className="img-fluid" alt="Destination Set"></img>
-                        <p id='loginH'>
-                            New Here? <button className="btn btn-light" id='btn-signup' onClick={() => toggleRedirectS(true)}>Signup</button>
-                            <button id='btn-login' className="btn btn-light" type='submit' onClick={() => toggleRedirectL(true)}>Login</button>
-                        </p>
-
-                    </form>
+                    <h1 className='display-4' id='h1'>
+                        Welcome to Destination Set
+                    </h1>
+                    <img src={DestinSet} width={700} height={200} className="img-fluid" alt="Destination Set"></img>
+                    <p id='loginH'>
+                        New Here? <button className="btn btn-light" id='btn-signup' onClick={() => toggleRedirectS(true)}>Signup</button>
+                        <button id='btn-login' className="btn btn-light" type='submit' onClick={() => toggleRedirectL(true)}>Login</button>
+                    </p>
 
                 </>
             }
