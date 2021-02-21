@@ -1,5 +1,5 @@
 
-import { Fragment } from 'react';
+import { Fragment,} from 'react';
 import CalenderHook from '../hooks/calender';
 import '../assets/stylesheetsComponents/Calender.css';
 // https://www.yelp.com/
@@ -31,7 +31,7 @@ export const Calender = () => {
                                     {cols.map(col => (
                                         col.date === todayFormatted
                                             ? <td key={col.date} className={`${col.classes} today`} onClick={() => dateClickHandler(col.date)}>{col.day}</td>
-                                            : <td key={col.date} className={col.classes} onClick={() => dateClickHandler(col.date)}>{col.day}</td>
+                                            : <td onKeyPress={() => console.log(col.date)} key={col.date} className={col.classes} onClick={() => dateClickHandler(col.date)}>{col.day}</td>
                                     ))}
                                 </tr>;
                             })
