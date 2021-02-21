@@ -4,7 +4,7 @@ import Clock from '../components/Clock';
 import Translate from '../components/TranslateB';
 import ConvertCurr from '../components/ConvertCurr';
 import SpillCofLaptop from '../assets/images/SpilledCoffeeLaptop.jpg';
-import DestinSet from '../assets/images/DestinSet.jpg';
+import DestinSet from '../assets/images/Landing_image.jpg';
 import { Redirect } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import axios from 'axios';
@@ -134,14 +134,23 @@ function Home(props) {
                 </>
                 :
                 <>
-                    <h1 className='display-4' id='h1'>
-                        Welcome to Destination Set
-                    </h1>
-                    <img src={DestinSet} width={700} height={200} className="img-fluid" alt="Destination Set"></img>
-                    <p id='loginH'>
-                        New Here? <button className="btn btn-light" id='btn-signup' onClick={() => toggleRedirectS(true)}>Signup</button>
-                        <button id='btn-login' className="btn btn-light" type='submit' onClick={() => toggleRedirectL(true)}>Login</button>
-                    </p>
+                    <section className='row'>
+                        <div class="card homeCards">
+                            <div class="card-body">
+                                <h1 id='h1'>Welcome to Destination Set</h1>
+                                <h4 id='h1'>Your trusted partner in safety and business as you travel for your work!!</h4>
+                                <p id='loginH'>
+                                    New Here? <button className="btn btn-light" id='btn-signup' onClick={() => toggleRedirectS(true)}>Signup</button>
+                                </p>
+                            </div>
+                            {/* Image by JamesDeMers from Pixabay  */}
+                            <img src={DestinSet} width={300} height={350} class="card-img-bottom" alt="Destination Set"></img>
+                            <p>Image by JamesDeMers from Pixabay</p>
+                        </div>
+                    </section>
+                    <section className='row justify-content-end'>
+                        <p id='h1'>Already Have an Account With Us? <button id='btn-login' className="btn" type='submit' onClick={() => toggleRedirectL(true)}>Login</button></p>
+                    </section>
 
                 </>
             }

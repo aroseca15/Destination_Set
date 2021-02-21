@@ -7,6 +7,10 @@
     background-color: cornsilk;
 }
 
+.homeCards{
+  background-color: rgb(162, 149, 171);
+}
+
 #visa{
   background-color: rgba(255, 0, 0, 0.565);
 }
