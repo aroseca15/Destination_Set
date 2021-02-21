@@ -22,9 +22,9 @@ const useAuth = () => {
             });
     };
 
-    const signup = async (email, password, first, last, phone, dob, securityQ, contact) => {
+    const signup = async (email, password, first, last) => {
         return axios.post('api/auth/signup',
-            { email: email, password: password, first: first, last: last, phone: phone, dob: dob, securityQ: securityQ, contact: contact })
+            { email: email, password: password, first: first, last: last })
             .then(res => {
                 setToken(res.data.token);
                 setUser(res.data.user);

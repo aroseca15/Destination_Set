@@ -34,10 +34,7 @@ router.post('/login', async (req, res) => {
                 id: user.id,
                 email: user.email,
                 first: user.first,
-                phone: user.phone,
-                dob: user.dob,
-                securityQ: user.securityQ,
-                contact: user.contact
+                last: user.last
             }
         });
     } catch (err) {
@@ -50,17 +47,13 @@ router.post('/login', async (req, res) => {
 // We create a user, tossing back an error fi it fails
 router.post('/signup', async (req, res) => {
     try {
-        const { email, password, first, last, phone, dob, securityQ, contact } = req.body;
+        const { email, password, first, last } = req.body;
         // Try to create a user
         const user = await db.User.create({
             email,
             password,
             first,
-            last,
-            phone,
-            dob,
-            securityQ,
-            contact
+            last
         });
         if (!user) {
             res.status(400).send('Cannot create user.');
@@ -80,10 +73,7 @@ router.post('/signup', async (req, res) => {
                 id: user.id,
                 email: user.email,
                 first: user.first,
-                phone: user.phone,
-                dob: user.dob,
-                securityQ: user.securityQ,
-                contact: user.contact
+                last: user.last
             }
         });
     } catch (err) {
