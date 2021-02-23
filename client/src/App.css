@@ -35,11 +35,19 @@
 max-width: 270px;
 }
 
+#homeButtons{
+  font-size: large;
+  font-weight: 800;
+  font-family: 'Times New Roman', Times, serif;
+}
+
 #convertC{
   max-width: 400rem;
   max-height: 400px;
   margin-bottom: 80px;
-  
+  background-color:  rgba(113, 125, 145, 0.348);
+  font-family: 'Times New Roman', Times, serif;
+  font-weight: 900;
 }
 
 
@@ -136,7 +144,7 @@ font-size: larger;
   text-align: center;
   font-family: 'Times New Roman', Times, serif;
   font-weight: 900;
-  background-color: bisque;
+  background-color: rgba(255, 228, 196, 0.334);
   max-width: 25rem;
 }
 

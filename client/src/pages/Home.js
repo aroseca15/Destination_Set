@@ -67,7 +67,6 @@ function Home(props) {
         }}
         />;
     }
-
     return (
         <main className='App container'>
 
@@ -104,7 +103,24 @@ function Home(props) {
                             <p></p>
                         </div>
                         <div className='col'>
-                            <p></p>
+                            <input type='file' onChange={(event) => {
+                                console.log(event.target.files);
+                                const reader = new FileReader();
+                                reader.onload = function (e) {
+                                    fetch('https://api.imgbb.com/1/upload?key=dbc4560653a80dfd8588d08487fb3fca', {
+                                        method: 'POST',
+                                        mode: 'cors',
+                                        body: JSON.stringify({
+                                            image: e.target.result
+                                        })
+                                    });
+                                };
+                                reader.onerror = function (e) {
+                                    // error occurred
+                                    console.log('Error : ' + e.type);
+                                };
+                                reader.readAsBinaryString(event.target.files[0]);
+                            }}></input>
                         </div>
 
                         <div id='notes' className='card col-lg-8 align-self-end'>

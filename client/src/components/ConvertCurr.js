@@ -11,9 +11,9 @@ export const ConvertCurr = () => {
             {/*First row is an input where user puts in amount in us dollars. User then makes a selection of currency symbol from drop down and the value is past to next row in convertedPostRef.   */}
             <section className='row'>
                 <div className="input-group mb-3">
-                    <span className="input-group-text">$</span>
+                    <span id='homeButtons' className="input-group-text">$</span>
                     <input type="text" className="form-control" aria-label="Amount (to the nearest dollar)" ref={userInputRef}></input>
-                    <select onChange={(event) => { setCurrency(event.currentTarget.value); }}>
+                    <select id='homeButtons' onChange={(event) => { setCurrency(event.currentTarget.value); }}>
                         <option value='BRL'>R$</option>
                         <option value='EUR'>€</option>
                         <option value='GBP'>£</option>
@@ -23,11 +23,11 @@ export const ConvertCurr = () => {
             </section >
             <section className='row'>
                 <div className="input-group mb-3">
-                    <span className="input-group-text">Converted</span>
+                    <span id='homeButtons' className="input-group-text">Converted</span>
                     <input type="text" className="form-control" aria-label="Amount (to the nearest dollar)" ref={convertedPostRef}></input>
                 </div>
                 {/* Calculation is doing in an onClick event. */}
-                <button type="button" className="btn btn-secondary d-grid gap-2 col-6 mx-auto btn-outline-warning" onClick={() => {
+                <button id='homeButtons' type="button" className="btn btn-secondary d-grid gap-2 col-6 mx-auto btn-outline-warning" onClick={() => {
                     const userInputVal = userInputRef.current.value;
                     const currencyType = data.currencies.find((entry) => { return entry.code === currency; });
                     const sellRate = currencyType.sellRate;
