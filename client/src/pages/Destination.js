@@ -80,6 +80,8 @@ const Destination = () => {
                                 }}>Rio De Janeiro</Link><br />
                             </div>
                         </div>
+                    </div>
+                    <div className='col align-self-center'>
                         <div className='image'>
                             <img src={NYC} width={500} height={400} alt="New York City" /><br />
                             <div className='overlay'>
