@@ -29,57 +29,72 @@ const Destination = () => {
             <div className='icons'>
                 <Header></Header>
                 <section className='row align-items-center '>
-                    <div className='col align-self-center'>
-                        <img src={Paris} width={500} height={400} alt="Paris" /><br />
-                        <Link id='btnText' to={{
-                            pathname: '/',
-                            linkDestination: {
-                                id: 1,
-                                countryCode: 'FR',
-                                name: 'Paris',
-                                language: 'French',
-                                currency: 'Euros €'
-                            }
-                        }}>Paris</Link><br />
-
-                        <img src={London} width={500} height={400} alt="London" /><br />
-                        <Link id='btnText' to={{
-                            pathname: '/',
-                            linkDestination: {
-                                id: 3,
-                                countryCode: 'GB',
-                                name: 'London',
-                                language: 'English',
-                                currency: 'Pound Sterling £'
-                            }
-                        }}>London</Link><br />
+                    <div className='image'>
+                        <div className='col align-self-center'>
+                            <img src={Paris} width={500} height={400} alt="Paris" /><br />
+                            <div className='overlay'>
+                                <Link className='city' to={{
+                                    pathname: '/',
+                                    linkDestination: {
+                                        id: 1,
+                                        countryCode: 'FR',
+                                        name: 'Paris',
+                                        language: 'French',
+                                        currency: 'Euros €'
+                                    }
+                                }}>Paris</Link><br />
+                            </div>
+                        </div>
                     </div>
+                    <div className='image'>
+                        <img src={London} width={500} height={400} alt="London" /><br />
+                        <div className='overlay'>
+                            <Link className='city' id='btnText' to={{
+                                pathname: '/',
+                                linkDestination: {
+                                    id: 3,
+                                    countryCode: 'GB',
+                                    name: 'London',
+                                    language: 'English',
+                                    currency: 'Pound Sterling £'
+                                }
+                            }}>London</Link><br />
+                        </div>
+                    </div>
+                </section>
 
-
-                    <div className='col align-self-center'>
-                        <img src={RioDeJaneiro} width={500} height={400} alt="Rio De Janeiro" /><br />
-                        <Link id='btnText' to={{
-                            pathname: '/',
-                            linkDestination: {
-                                id: 2,
-                                countryCode: 'BR',
-                                name: 'Rio De Janeiro',
-                                language: 'Brazilian Portuguese',
-                                currency: 'Reais R$'
-                            }
-                        }}>Rio De Janeiro</Link><br />
-
-                        <img src={NYC} width={500} height={400} alt="New York City" /><br />
-                        <Link id='btnText' to={{
-                            pathname: '/',
-                            linkDestination: {
-                                id: 4,
-                                countryCode: 'US',
-                                name: 'New York City',
-                                language: 'English',
-                                currency: 'USD $'
-                            }
-                        }}>NYC</Link>
+                <section className='row align-items-center '>
+                    <div className='image'>
+                        <div className='col align-self-center'>
+                            <img src={RioDeJaneiro} width={500} height={400} alt="Rio De Janeiro" /><br />
+                            <div className='overlay'>
+                                <Link className='city' id='btnText' to={{
+                                    pathname: '/',
+                                    linkDestination: {
+                                        id: 2,
+                                        countryCode: 'BR',
+                                        name: 'Rio De Janeiro',
+                                        language: 'Brazilian Portuguese',
+                                        currency: 'Reais R$'
+                                    }
+                                }}>Rio De Janeiro</Link><br />
+                            </div>
+                        </div>
+                        <div className='image'>
+                            <img src={NYC} width={500} height={400} alt="New York City" /><br />
+                            <div className='overlay'>
+                                <Link className='city' id='btnText' to={{
+                                    pathname: '/',
+                                    linkDestination: {
+                                        id: 4,
+                                        countryCode: 'US',
+                                        name: 'New York City',
+                                        language: 'English',
+                                        currency: 'USD $'
+                                    }
+                                }}>NYC</Link>
+                            </div>
+                        </div>
                     </div>
                 </section>
             </div>

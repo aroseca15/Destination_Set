@@ -15,7 +15,7 @@ export const Calender = () => {
         <main className='container'>
             <Fragment>
                 <p>Selected Month: {`${monthNames[selectedDate.getMonth()]}-${selectedDate.getFullYear()}`}</p>
-                <table className='table calender'>
+                <table id='calender' className='table'>
                     <thead>
                         <tr>
                             {daysShort.map(day => {

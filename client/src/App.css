@@ -53,7 +53,7 @@ max-width: 270px;
 
 #btnText{
   color: black;
-  font-size: larger;
+  font-size: xx-large;
   font-weight: bolder;
 }
 
@@ -121,6 +121,7 @@ font-size: larger;
   font-weight: 500;
   margin-left: 55px;
   margin-top: 20px;
+  /* background-color: aqua; */
 }
 
 .dateTime{
@@ -128,6 +129,7 @@ font-size: larger;
   font-weight: 500;
   font-size: larger;
   margin-left: 400px;
+  /* background-color: aqua; */
 }
 
 
@@ -159,11 +161,46 @@ font-size: larger;
   font-weight: 600;
   color: antiquewhite;
 }
-.overlay{
-  margin-top: 50px;
+
+.image{
+  border-radius: 25px;
+  position: relative;
+  opacity: 1;
+  display: block;
+  transition: .5s ease;
+  backface-visibility: hidden;
+}
+.image_overlay{
+  position: relative;
+  margin: 0px 0px 0px 0px;
+  width: 100%;
+  text-align: center;
+  /* margin-top: 50px; */
 }
 #searchI{
   margin-top: 30px;
+}
+
+.city{
+  transition: .5s ease;
+  opacity: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  color: antiquewhite;
+  font-size: xx-large;
+  font-weight: bolder;
+}
+
+.overlay:hover .image {
+  opacity: 0.1;
+}
+
+
+.overlay:hover .city {
+  opacity: 1;
 }
 /* Photo Credits: Paris- www.vactualpapers.com   Rio De Janeiro- www.freewalkertours.com/   London- www.youtube.com    New York- www.istockphoto.com  */
 /* .icons{

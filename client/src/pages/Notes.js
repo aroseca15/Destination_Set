@@ -3,7 +3,7 @@ import axios from 'axios';
 import NoteForm from '../components/NoteForm';
 import AquizForm from '../components/AquizForm';
 import useAuth from '../hooks/auth';
-import Calender from '../components/Calender';
+
 
 // import Calender from '../components/Calender';
 
@@ -77,11 +77,7 @@ const Notes = function () {
                         </ol>
                         <NoteForm didSubmit={refreshParent} />
                     </div>
-                    
-                    <div className="dateTime">
-                        <h1 id='schedule' className="display-4">Today's News and Weather </h1>
-                        <Calender></Calender>
-                    </div>
+
                 </section>
                 <section className='row'>
                     <div className='card col align-self-start' id='aquiz'>

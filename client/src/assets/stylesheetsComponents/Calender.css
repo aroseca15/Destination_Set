@@ -1,4 +1,5 @@
-.calender {
+#calender {
     background-color: rgba(128, 128, 128, 0.355);
-    max-width: 500px;
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: 500;
 }

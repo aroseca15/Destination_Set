@@ -8,9 +8,36 @@ import DestinSet from '../assets/images/Landing_image.jpg';
 import { Redirect } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import axios from 'axios';
+import Calender from '../components/Calender';
+// import SchedForm from '../components/SchedForm';
 
 
 function Home(props) {
+    // const [scheds, setSched] = useState([]);
+    // const [refresh, toggleRefresh] = useState(0);
+    // const refreshParent = () => {
+    //     toggleRefresh(refresh + 1);
+    // };
+
+    // // Notice deps has refresh in there - this way when it increments from someone submitting
+    // // it calls fetch sched again.
+    // useEffect(() => {
+    //     fetchSched();
+    // }, [refresh]);
+
+    // // Check out that include!
+    // async function fetchSched() {
+    //     const { data } = await axios.get('/api/sched?include=User');
+    //     setSched(data);
+    //     console.log(data);
+
+    // }
+
+    // const deleteSched = async (id) => {
+    //     await axios.delete('/api/sched/' + id);
+    //     refreshParent();
+    // };
+
     const [countryApi, setCountryApi] = useState({ advisory: { message: '', className: '' } });
     useEffect(() => {
         if (!props.location.linkDestination) {
@@ -59,11 +86,11 @@ function Home(props) {
         />;
     }
     if (isLoggedIn() && !props.location.linkDestination) {
-
         return <Redirect to={{
             // If someone goes to signup, this transfers the redirect
             pathname: '/destinations',
             state: { from: from }
+            
         }}
         />;
     }
@@ -96,11 +123,46 @@ function Home(props) {
                             </div>
                         </div>
                     </section>
-
                     <section className='row'>
-                        <div id='notes' className='card col-lg-8 align-self-start'>
+                        <div id='notes' className='card col-4 align-self-start'>
                             <p>YOUR CURRENT DESTINATION: {props.location.linkDestination.name}</p>
                             <p></p>
+                        </div>
+                        <div class="dropdown col-4 align-self-center">
+                            <button class="btn btn-secondary btn-lg dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" >Large button</button>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="#">Action</a></li>
+                                <li><a class="dropdown-item" href="#">Another action</a></li>
+                                <li><a class="dropdown-item" href="#">Something else here</a></li>
+                            </ul>
+                        </div>
+                        <div id='notes' className='card col-4 align-self-end'>
+                            <p>Common Language Used: {props.location.linkDestination.language}</p>
+                            <p>Currency in Used: {props.location.linkDestination.currency}</p>
+                        </div>
+                    </section>
+
+                    <section className='row'>
+                        <div className="dateTime">
+                            <h1 id='schedule' className="display-4">Meeting Schedule</h1>
+                            <Calender></Calender>
+                            {/* <div className='card col align-self-start' id='notes'>
+                                <h2>Meeting Schedule</h2>
+                                <ol>
+                                    {scheds.map(sched => {
+                                        return (
+                                            <li key={sched.id}>
+                                                <strong>{sched.time}: </strong>
+                                                {sched.client} 
+                                                {sched.venue} 
+                                                {sched.venueAddress} <button onClick={() => deleteSched(sched.id)} className='btn-danger' type='submit'>X</button>
+                                            </li>
+                                        );
+                                    })}
+                                </ol>
+                                <SchedForm didSubmit={refreshParent} />
+                            </div> */}
+
                         </div>
                         <div className='col'>
                             <input type='file' onChange={(event) => {
@@ -123,10 +185,6 @@ function Home(props) {
                             }}></input>
                         </div>
 
-                        <div id='notes' className='card col-lg-8 align-self-end'>
-                            <p>Common Language Used: {props.location.linkDestination.language}</p>
-                            <p>Currency in Used: {props.location.linkDestination.currency}</p>
-                        </div>
                     </section>
                     <section className='row'>
                         <div id='translate' className='col align-self-start'>

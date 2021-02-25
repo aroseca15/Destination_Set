@@ -7,9 +7,12 @@ const authRoutes = require('./authController');
 const aquizRoutes = require('./aquizController');
 const destinationRoutes = require('./DestinationController');
 const browserRoutes = require('./browserController');
+const calSchedRoutes = require('./calSchedController');
+
 
 // Hook up to the router
 router.use('/api/notes', noteRoutes);
+router.use('/api/sched', calSchedRoutes);
 router.use('/api/users', userRoutes);
 router.use('/api/auth', authRoutes);
 router.use('/api/aquiz', aquizRoutes);
