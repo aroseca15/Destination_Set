@@ -29,7 +29,7 @@ const Destination = () => {
             <div className='icons'>
                 <Header></Header>
                 <section className='row align-items-center '>
-                    <div className='image'>
+                    <div className='image overlay'>
                         <div className='col align-self-center'>
                             <img src={Paris} width={500} height={400} alt="Paris" /><br />
                             <div className='overlay'>
@@ -46,7 +46,7 @@ const Destination = () => {
                             </div>
                         </div>
                     </div>
-                    <div className='image'>
+                    <div className='image overlay'>
                         <img src={London} width={500} height={400} alt="London" /><br />
                         <div className='overlay'>
                             <Link className='city' id='btnText' to={{
@@ -64,7 +64,7 @@ const Destination = () => {
                 </section>
 
                 <section className='row align-items-center '>
-                    <div className='image'>
+                    <div className='image overlay'>
                         <div className='col align-self-center'>
                             <img src={RioDeJaneiro} width={500} height={400} alt="Rio De Janeiro" /><br />
                             <div className='overlay'>
@@ -82,7 +82,7 @@ const Destination = () => {
                         </div>
                     </div>
                     <div className='col align-self-center'>
-                        <div className='image'>
+                        <div className='image overlay'>
                             <img src={NYC} width={500} height={400} alt="New York City" /><br />
                             <div className='overlay'>
                                 <Link className='city' id='btnText' to={{

@@ -2,7 +2,10 @@
     text-align: center;
     margin-top: 70px;
   } 
-  
+
+#acces{
+  margin-left: 30px;
+}
 .bg{
     background-color: cornsilk;
 }
@@ -31,6 +34,10 @@
   background-color: rgba(255, 0, 0, 0.477);
 }
 
+.message{
+  margin-top: 18px;
+}
+
 #translate{
 max-width: 270px;
 }
@@ -45,6 +52,11 @@ max-width: 270px;
   font-family: 'Times New Roman', Times, serif;
   font-weight: 900;
   font-size: large;
+}
+
+#clothes{
+  max-width: 100%;
+  max-height: 20%;
 }
 
 #homeButtons{
@@ -65,14 +77,21 @@ max-width: 270px;
 
 #btnText{
   color: black;
-  font-size: xx-large;
+  font-size: larger;
   font-weight: bolder;
+  font-family: 'Times New Roman', Times, serif;
 }
 
 #fillIn{
   font-family: 'Times New Roman', Times, serif;
   font-weight: 600;
   font-size: larger;
+}
+
+#picText{
+  color: antiquewhite;
+  font-weight: bolder;
+  font-family: 'Times New Roman', Times, serif;
 }
 
 #h1{
@@ -190,7 +209,22 @@ font-size: larger;
   /* margin-top: 50px; */
 }
 #searchI{
-  margin-top: 30px;
+  position: absolute;
+  top: 50%;
+  left: 70%;
+}
+
+#searchIT{
+  position: absolute;
+  bottom: 90%;
+  left: 35%;
+}
+
+.picTech{
+  position: absolute;
+  top: 80%;
+  bottom: 0%;
+  left: 30%;
 }
 
 .city{
@@ -206,9 +240,18 @@ font-size: larger;
   font-weight: bolder;
 }
 
+.picText{
+  position: absolute;
+  top: 20%;
+  left: 0%;
+  color: antiquewhite;
+  font-weight: bolder;
+}
+
 .overlay:hover .image {
   opacity: 0.1;
 }
+
 
 
 .overlay:hover .city {

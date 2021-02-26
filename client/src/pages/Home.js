@@ -149,7 +149,7 @@ function Home(props) {
                             <p>CURRENCY CONVERT CALCULATOR</p>
                             <ConvertCurr></ConvertCurr>
                         </div>
-                        <div className='image'>
+                        <div className='image overlay'>
                             <img src={SpillCofLaptop} width={300} height={300} alt="Spilled Coffee Laptop" />
                             <div className='overlay'>
                                 <Link className='city' id='btnText' to={{
