@@ -1,5 +1,10 @@
 #calender {
-    background-color: rgba(128, 128, 128, 0.355);
+    background-color: white;
     font-family: 'Times New Roman', Times, serif;
     font-weight: 500;
+    max-height: 500px;
+}
+
+#card{
+    background-color: rgba(95, 158, 160, 0.443);
 }

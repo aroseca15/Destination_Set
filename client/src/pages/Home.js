@@ -1,7 +1,7 @@
 import useAuth from '../hooks/auth';
 import { Link } from 'react-router-dom';
 import Clock from '../components/Clock';
-import Translate from '../components/TranslateB';
+// import Translate from '../components/TranslateB';
 import ConvertCurr from '../components/ConvertCurr';
 import SpillCofLaptop from '../assets/images/SpilledCoffeeLaptop.jpg';
 import DestinSet from '../assets/images/Landing_image.jpg';
@@ -19,13 +19,16 @@ function Home(props) {
     //     toggleRefresh(refresh + 1);
     // };
 
-    // // Notice deps has refresh in there - this way when it increments from someone submitting
-    // // it calls fetch sched again.
+    // Notice deps has refresh in there - this way when it increments from someone submitting
+    // it calls fetch sched again.
     // useEffect(() => {
-    //     fetchSched();
+    //     if (isLoggedIn()) {
+    //         fetchSched();
+    //     }
+
     // }, [refresh]);
 
-    // // Check out that include!
+    // Check out that include!
     // async function fetchSched() {
     //     const { data } = await axios.get('/api/sched?include=User');
     //     setSched(data);
@@ -56,7 +59,7 @@ function Home(props) {
                     country.advisory.className = 'medium';
                 } else if (country.advisory.score < 4) {
                     country.advisory.className = 'high';
-                } else if (country.advisory.score > 4.5) {
+                } else if (country.advisory.score < 7) {
                     country.advisory.className = 'extreme';
                 }
                 setCountryApi(country);
@@ -90,7 +93,7 @@ function Home(props) {
             // If someone goes to signup, this transfers the redirect
             pathname: '/destinations',
             state: { from: from }
-            
+
         }}
         />;
     }
@@ -115,96 +118,73 @@ function Home(props) {
                     <section className='row'>
                         <div className='col'>
                             <div className={`card border-${countryApi.advisory.className} mb-3`} >
-                                <div className={`card-header ${countryApi.advisory.className}`}>Covid Index</div>
-                                <div className="card-body">
-                                    <h5 className="card-title">{props.location.linkDestination.name}</h5>
-                                    <p className="card-text">{countryApi.advisory.message}</p>
+                                <div id='cardText' className={`card-header ${countryApi.advisory.className}`}>Covid Index</div>
+                                <div className={`card body ${countryApi.advisory.className}`}>
+                                    <h5 id='place' className="card-title">{props.location.linkDestination.name}</h5>
+                                    <p id='cardText'>Common Language Used: {props.location.linkDestination.language}</p>
+                                    <p id='cardText'>Currency in Used: {props.location.linkDestination.currency}</p>
+                                    <p id='cardText' className="card-text">{countryApi.advisory.message}</p>
                                 </div>
                             </div>
                         </div>
                     </section>
-                    <section className='row'>
-                        <div id='notes' className='card col-4 align-self-start'>
+                    <section className='row align-items-center'>
+                        {/* <div id='notes' className='card col-4 align-self-start'>
                             <p>YOUR CURRENT DESTINATION: {props.location.linkDestination.name}</p>
                             <p></p>
-                        </div>
-                        <div class="dropdown col-4 align-self-center">
+                        </div> */}
+                        {/* <div class="dropdown col-4 align-self-center">
                             <button class="btn btn-secondary btn-lg dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" >Large button</button>
                             <ul class="dropdown-menu">
                                 <li><a class="dropdown-item" href="#">Action</a></li>
                                 <li><a class="dropdown-item" href="#">Another action</a></li>
                                 <li><a class="dropdown-item" href="#">Something else here</a></li>
                             </ul>
-                        </div>
-                        <div id='notes' className='card col-4 align-self-end'>
-                            <p>Common Language Used: {props.location.linkDestination.language}</p>
+                        </div> */}
+                        {/* <div id='notes' className='card col-4 align-self-center'>
+                            <p >Common Language Used: {props.location.linkDestination.language}</p>
                             <p>Currency in Used: {props.location.linkDestination.currency}</p>
-                        </div>
-                    </section>
-
-                    <section className='row'>
-                        <div className="dateTime">
-                            <h1 id='schedule' className="display-4">Meeting Schedule</h1>
-                            <Calender></Calender>
-                            {/* <div className='card col align-self-start' id='notes'>
-                                <h2>Meeting Schedule</h2>
-                                <ol>
-                                    {scheds.map(sched => {
-                                        return (
-                                            <li key={sched.id}>
-                                                <strong>{sched.time}: </strong>
-                                                {sched.client} 
-                                                {sched.venue} 
-                                                {sched.venueAddress} <button onClick={() => deleteSched(sched.id)} className='btn-danger' type='submit'>X</button>
-                                            </li>
-                                        );
-                                    })}
-                                </ol>
-                                <SchedForm didSubmit={refreshParent} />
-                            </div> */}
-
-                        </div>
-                        <div className='col'>
-                            <input type='file' onChange={(event) => {
-                                console.log(event.target.files);
-                                const reader = new FileReader();
-                                reader.onload = function (e) {
-                                    fetch('https://api.imgbb.com/1/upload?key=dbc4560653a80dfd8588d08487fb3fca', {
-                                        method: 'POST',
-                                        mode: 'cors',
-                                        body: JSON.stringify({
-                                            image: e.target.result
-                                        })
-                                    });
-                                };
-                                reader.onerror = function (e) {
-                                    // error occurred
-                                    console.log('Error : ' + e.type);
-                                };
-                                reader.readAsBinaryString(event.target.files[0]);
-                            }}></input>
-                        </div>
-
-                    </section>
-                    <section className='row'>
-                        <div id='translate' className='col align-self-start'>
-                            <Translate></Translate>
-                        </div>
-                        <div className='col'>
-                            <p></p>
-                        </div>
-                        <div id='convertC' className='card col align-self-end'>
+                        </div> */}
+                        <div id='convertC' className='card col-6 align-self-center'>
                             <p>CURRENCY CONVERT CALCULATOR</p>
                             <ConvertCurr></ConvertCurr>
                         </div>
+                        <div className='image'>
+                            <img src={SpillCofLaptop} width={300} height={300} alt="Spilled Coffee Laptop" />
+                            <div className='overlay'>
+                                <Link className='city' id='btnText' to={{
+                                    pathname: '/business/' + props.location.linkDestination.id,
+                                }}>Click for Fast Solutions</Link>
+                            </div>
+                        </div>
                     </section>
-                    <div>
-                        <img src={SpillCofLaptop} width={300} height={300} alt="Spilled Coffee Laptop" /><br />
-                        <button className='btn btn-warning'><Link id='btnText' to={{
-                            pathname: '/business/' + props.location.linkDestination.id,
+                    <section className='row'>
 
-                        }}>Expected Solutions to the Unexpected</Link></button><br />
-                    </div>
+                        <Calender></Calender> {/* scheds={scheds}/*
+                        {/* <div className='card col align-self-start' id='notes'>
+                            <h2>Meeting Schedule</h2>
+                            <ol>
+                                {scheds.map(sched => {
+                                    return (
+                                        <li key={sched.id}>
+                                            <strong>{sched.time}: </strong>
+                                            {sched.client}
+                                            {sched.venue}
+                                            {sched.venueAddress} <button onClick={() => deleteSched(sched.id)} className='btn-danger' type='submit'>X</button>
+                                        </li>
+                                    );
+                                })}
+                            </ol>
+                            <SchedForm didSubmit={refreshParent} />
+                        </div> */}
+                    </section>
+                    <section>
+
+
+                    </section>
+                    {/* <div id='translate' className='col-4 align-self-start'>
+                        <Translate></Translate>
+                    </div> */}
                 </>
                 :
                 <>
@@ -228,7 +208,7 @@ function Home(props) {
 
                 </>
             }
-        </main>
+        </main >
 
     );
 }

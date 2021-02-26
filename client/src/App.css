@@ -12,7 +12,7 @@
 }
 
 #visa{
-  background-color: rgba(255, 0, 0, 0.565);
+  background-color: rgb(186, 172, 114);
 }
 
 .low{
@@ -24,15 +24,27 @@
 }
 
 .high{
-  background-color: rgba(255, 255, 0, 0.545);
+  background-color: rgba(255, 255, 0, 0.817);
 }
 
 .extreme{
-  background-color: red;
+  background-color: rgba(255, 0, 0, 0.477);
 }
 
 #translate{
 max-width: 270px;
+}
+
+#place{
+  font-family: 'Times New Roman', Times, serif;
+  font-weight: 900;
+  font-size: xx-large;
+}
+
+#cardText{
+  font-family: 'Times New Roman', Times, serif;
+  font-weight: 900;
+  font-size: large;
 }
 
 #homeButtons{
@@ -42,9 +54,9 @@ max-width: 270px;
 }
 
 #convertC{
-  max-width: 400rem;
+  max-width: 300rem;
   max-height: 400px;
-  margin-bottom: 80px;
+  margin-right: 80px;
   background-color:  rgba(113, 125, 145, 0.348);
   font-family: 'Times New Roman', Times, serif;
   font-weight: 900;
@@ -139,7 +151,7 @@ font-size: larger;
   font-weight: 900;
   background-color: rgba(85, 107, 47, 0.341);
   max-width: 25rem;
-  margin-top: 50px;
+  /* margin-top: 50px; */
 }
 
 #aquiz{
@@ -201,6 +213,7 @@ font-size: larger;
 
 .overlay:hover .city {
   opacity: 1;
+  background-color: rgba(255, 228, 196, 0.463);
 }
 /* Photo Credits: Paris- www.vactualpapers.com   Rio De Janeiro- www.freewalkertours.com/   London- www.youtube.com    New York- www.istockphoto.com  */
 /* .icons{
