@@ -188,7 +188,7 @@ function Home(props) {
                 </>
                 :
                 <>
-                    <section className='row'>
+                    <section className='row container-fluid'>
                         <div class="card homeCards">
                             <div class="card-body">
                                 <h1 id='h1'>Welcome to Destination Set</h1>
@@ -198,7 +198,7 @@ function Home(props) {
                                 </p>
                             </div>
                             {/* Image by JamesDeMers from Pixabay  */}
-                            <img src={DestinSet} width={300} height={350} class="card-img-bottom" alt="Destination Set"></img>
+                            <img src={DestinSet} width={300} height={400} class="card-img-bottom" alt="Destination Set"></img>
                             <p>Image by JamesDeMers from Pixabay</p>
                         </div>
                     </section>
