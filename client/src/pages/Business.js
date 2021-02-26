@@ -48,8 +48,8 @@ function Business(props) {
                             <div className='col-5 align-self-start'>
                                 <div className="image overlay">
                                     <img id='acces' src={acces} className="img-fluid" alt="Destination Set"></img>
-                                    <div className='overlay picTech'>
-                                        <h1 id='h1'>Got Accessories?</h1>
+                                    <div className='overlay picAcces'>
+                                        <h1 id='h1'>Accessories</h1>
                                         <div id='searchIT'>
                                             <a href={`https://www.google.com/search?q=business+accessories+office+supplies+${destination.country}+${destination.city}`} rel='noreferrer' target='_blank'><img id='tech' src={searchI} width={50} className="img-fluid" alt="Destination Set"></img></a>
                                         </div>

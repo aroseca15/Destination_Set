@@ -1,8 +1,7 @@
 import { useState } from 'react';
 import axios from 'axios';
 
-const SchedForm = (props) => {
-    const { didSubmit } = props;
+const SchedForm = ({didSubmit, selectedDate}) => {
     const [time, setTime] = useState('');
     const [venueAddress, setVenueAddress] = useState('');
     const [venue, setVenue] = useState('');
@@ -13,7 +12,7 @@ const SchedForm = (props) => {
         submitSched();
     };
     const submitSched = async () => {
-        await axios.post('/api/sched', { time: time, client: client, venue: venue, venueAddress: venueAddress });
+        await axios.post('/api/sched', { time: time, date:selectedDate, client: client, venue: venue, venueAddress: venueAddress });
         setClient('');
         setVenueAddress('');
         setVenue('');

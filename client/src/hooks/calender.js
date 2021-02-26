@@ -34,7 +34,7 @@ const CalenderHook = (daysShort = daysShortArray, monthNames = monthNamesArray) 
                 if (j < startingPoint) {
                     calenderRows[i] = [...calenderRows[i], {
                         classes: 'in-prev-month',
-                        date: `${prevMonthStaringPoint}-${selectedDate.getMonth() === 0 ? 12 : selectedDate.getMonth()}-${selectedDate.getMonth() === 0 ? selectedDate.getFullYear() - 1 : selectedDate.getFullYear()}`,
+                        date: `${selectedDate.getMonth() === 0 ? 12 : selectedDate.getMonth()}-${prevMonthStaringPoint}-${selectedDate.getMonth() === 0 ? selectedDate.getFullYear() - 1 : selectedDate.getFullYear()}`,
                         day: `${prevMonthStaringPoint}`,
                         value: prevMonthStaringPoint
                     }];
@@ -42,7 +42,7 @@ const CalenderHook = (daysShort = daysShortArray, monthNames = monthNamesArray) 
                 } else {
                     calenderRows[i] = [...calenderRows[i], {
                         classes: '',
-                        date: `${currentMonthCounter}-${selectedDate.getMonth() + 1}-${selectedDate.getFullYear()}`,
+                        date: `${selectedDate.getMonth() + 1}-${currentMonthCounter}-${selectedDate.getFullYear()}`,
                         day: `${currentMonthCounter}`,
                         value: currentMonthCounter
                     }];
@@ -51,7 +51,7 @@ const CalenderHook = (daysShort = daysShortArray, monthNames = monthNamesArray) 
             } else if (i > 1 && currentMonthCounter < daysInMonth + 1) {
                 calenderRows[i] = [...calenderRows[i], {
                     classes: '',
-                    date: `${currentMonthCounter}-${selectedDate.getMonth() + 1}-${selectedDate.getFullYear()}`,
+                    date: `${selectedDate.getMonth() + 1}-${currentMonthCounter}-${selectedDate.getFullYear()}`,
                     day: `${currentMonthCounter}`,
                     value: currentMonthCounter
                 }];
@@ -59,7 +59,7 @@ const CalenderHook = (daysShort = daysShortArray, monthNames = monthNamesArray) 
             } else {
                 calenderRows[i] = [...calenderRows[i], {
                     classes: 'in-next-month',
-                    date: `${nextMonthCounter}-${selectedDate.getMonth() + 2 === 13 ? 1 : selectedDate.getMonth() + 2}-${selectedDate.getMonth() + 2 === 13 ? selectedDate.getFullYear() + 1 : selectedDate.getFullYear()}`,
+                    date: `${selectedDate.getMonth() + 2 === 13 ? 1 : selectedDate.getMonth() + 2}-${nextMonthCounter}-${selectedDate.getMonth() + 2 === 13 ? selectedDate.getFullYear() + 1 : selectedDate.getFullYear()}`,
                     day: `${nextMonthCounter}`
                 }];
                 nextMonthCounter++;

@@ -6,6 +6,13 @@
 #acces{
   margin-left: 30px;
 }
+
+.picAcces{
+  position: absolute;
+  top: 70%;
+  left: 8%;
+}
+
 .bg{
     background-color: cornsilk;
 }
@@ -77,7 +84,7 @@ max-width: 270px;
 
 #btnText{
   color: black;
-  font-size: larger;
+  font-size: xx-large;
   font-weight: bolder;
   font-family: 'Times New Roman', Times, serif;
 }
@@ -152,7 +159,6 @@ font-size: larger;
   font-weight: 500;
   margin-left: 55px;
   margin-top: 20px;
-  /* background-color: aqua; */
 }
 
 .dateTime{
@@ -160,7 +166,6 @@ font-size: larger;
   font-weight: 500;
   font-size: larger;
   margin-left: 400px;
-  /* background-color: aqua; */
 }
 
 
@@ -181,7 +186,6 @@ font-size: larger;
   max-width: 25rem;
 }
 
-/* Business Search Page CSS: */
 #Bbanner{
  background-image: url('./assets/images/Header_Business.jpg');
 }
@@ -191,6 +195,22 @@ font-size: larger;
   font-family: 'Times New Roman', Times, serif;
   font-weight: 600;
   color: antiquewhite;
+}
+
+.sched{
+  position: relative;
+  display: block;
+  text-align: center;
+  font-family: 'Times New Roman', Times, serif;
+  font-weight: 900;
+  max-width: 25rem;
+  background-color: rgba(95, 158, 160, 0.967);
+}
+
+.schedOverlay{
+  position: absolute;
+  top: 120%;
+  left: 20%;
 }
 
 .image{
@@ -216,15 +236,15 @@ font-size: larger;
 
 #searchIT{
   position: absolute;
-  bottom: 90%;
-  left: 35%;
+  margin-bottom: 20px;
+  bottom: 110%;
+  left: 30%;
 }
 
 .picTech{
   position: absolute;
-  top: 80%;
-  bottom: 0%;
-  left: 30%;
+  top: 85%;
+  left: 20%;
 }
 
 .city{
