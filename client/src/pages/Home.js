@@ -119,7 +119,7 @@ function Home(props) {
                     <section className='row'>
                         <div className='col'>
                             <div className={`card border-${countryApi.advisory.className} mb-3`} >
-                                <div id='cardText' className={`card-header ${countryApi.advisory.className}`}>Covid Index</div>
+                                <div id='place' className={`card-header ${countryApi.advisory.className}`}>Travel Safety Index</div>
                                 <div className={`card body ${countryApi.advisory.className}`}>
                                     <h5 id='place' className="card-title">{props.location.linkDestination.name}</h5>
                                     <p id='cardText'>Common Language Used: {props.location.linkDestination.language}</p>
