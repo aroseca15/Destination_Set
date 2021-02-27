@@ -1,17 +1,17 @@
 import { useState } from 'react';
 import axios from 'axios';
 
-const NoteForm = (props) => {
+const PresentNotesForm = (props) => {
     const { didSubmit } = props;
     const [title, setTitle] = useState('');
     const [body, setBody] = useState('');
 
     const handleSubmit = event => {
         event.preventDefault();
-        submitNote();
+        submitPresentNote();
     };
-    const submitNote = async () => {
-        await axios.post('/api/notes', { title: title, body: body });
+    const submitPresentNote = async () => {
+        await axios.post('/api/presentnotes', { title: title, body: body });
         setBody('');
         setTitle('');
         didSubmit();
@@ -20,7 +20,6 @@ const NoteForm = (props) => {
     
     return (
         <div className='container'>
-            {/* <h2>Note Form</h2> */}
             <form className= 'form-group' onSubmit={handleSubmit}>
                 <label htmlFor="title"></label>
                 <input className='form-control'
@@ -30,6 +29,7 @@ const NoteForm = (props) => {
                     value={title}
                     onChange={event => setTitle(event.target.value)}
                 />
+                <br />
                 <label htmlFor="body"></label>
                 <textarea className='form-control' 
                     name='body'
@@ -45,4 +45,4 @@ const NoteForm = (props) => {
     );
 };
 
-export default NoteForm;
+export default PresentNotesForm;

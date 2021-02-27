@@ -19,23 +19,22 @@ const AquizForm = (props) => {
     };
 
     return (
-        <div>
+        <div className='container'>
             {/* <h2>Note Form</h2> */}
-            <form onSubmit={handleSubmit}>
+            <form className='form-group' onSubmit={handleSubmit}>
                 <label htmlFor="title"></label>
-                <input
+                <input className='form-control'
                     name='title'
-                    placeholder='Title'
+                    placeholder='Name '
                     type='text'
                     value={title}
                     onChange={event => setTitle(event.target.value)}
                 />
-                <br />
-                <br />
+                {/* <br /> */}
                 <label htmlFor="body"></label>
-                <textarea
+                <textarea className='form-control'
                     name='body'
-                    placeholder='Details'
+                    placeholder='Contact Information'
                     value={body}
                     onChange={event => setBody(event.target.value)}
                 />

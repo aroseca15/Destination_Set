@@ -107,6 +107,12 @@ max-width: 270px;
   font-weight: 600;
 }
 
+#h2{
+  margin-bottom: 50px;
+  font-family: 'Times New Roman', Times, serif;
+  font-weight: 600;
+}
+
 #loginH{
   /* margin-right: 25px; */
   margin-top: 50px;
@@ -171,19 +177,47 @@ font-size: larger;
 
 #notes{
   text-align: center;
+  font-size: large;
   font-family: 'Times New Roman', Times, serif;
   font-weight: 900;
-  background-color: rgba(85, 107, 47, 0.341);
-  max-width: 25rem;
-  /* margin-top: 50px; */
+  background-color: rgb(220, 200, 165);
+  max-width: 25%;
+  max-height: 100%;
+  margin-top: 45px;
 }
 
 #aquiz{
   text-align: center;
   font-family: 'Times New Roman', Times, serif;
+  font-size: large;
   font-weight: 900;
-  background-color: rgba(255, 228, 196, 0.334);
-  max-width: 25rem;
+  background-color: rgb(195, 199, 205);
+  max-width: 25%;
+  max-height: 100%;
+}
+
+#presentation{
+  margin-top: 10px;
+  margin-left: 15px;
+  text-align: center;
+  font-family: 'Times New Roman', Times, serif;
+  font-size: x-large;
+  font-weight: 900;
+  background-color: rgb(186, 160, 114);
+  max-width: 75%;
+  max-height: 100%;
+
+}
+
+#postMeet{
+  margin-left: 15px;
+  text-align: center;
+  font-family: 'Times New Roman', Times, serif;
+  font-size: x-large;
+  font-weight: 900;
+  background-color: rgba(133, 114, 147, 0.803);
+  max-width:75%;
+  max-height: 100%;
 }
 
 #Bbanner{
