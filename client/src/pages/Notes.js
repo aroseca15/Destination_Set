@@ -70,8 +70,8 @@ const Notes = function () {
                     </div>
                 </section> */}
                 <section className='row align-items-start'>
-                    <div className='card col align-self-start' id='notes' >
-                        <h2 id='h2'>Meeting Objectives</h2>
+                    <div className='card col-6 align-self-start' id='notes' >
+                        <h2 id='h2'>Meeting Objective List</h2>
                         <ol>
                             {notes.map(note => {
                                 return (
@@ -85,7 +85,7 @@ const Notes = function () {
                         <NoteForm didSubmit={refreshParent} />
                     </div>
                     <div className='card col align-self-start' id='presentation' >
-                        <h2 id='h2'>Presentation Notes</h2>
+                        <h2 id='h2'>Pre-Meeting Ideas</h2>
                         <ol>
                             {notes.map(note => {
                                 return (
@@ -100,7 +100,7 @@ const Notes = function () {
                     </div>
                 </section>
                 <section className='row align-items-start'>
-                    <div className='card col align-self-start' id='aquiz' >
+                    <div className='card col-6 align-self-start' id='aquiz' >
                         <h2 id='h2'>Business Contacts</h2>
                         <ol>
                             {aquizs.map(aquiz => {
@@ -115,7 +115,7 @@ const Notes = function () {
                         <AquizForm didSubmit={refreshParent} />
                     </div>
                     <div className='card col align-self-start' id='postMeet' >
-                        <h2 id='h2'>Post-Meeting Obseravtions</h2>
+                        <h2 id='h2'>Post-Meeting Notes</h2>
                         <ol>
                             {aquizs.map(aquiz => {
                                 return (

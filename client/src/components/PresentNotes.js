@@ -24,7 +24,7 @@ const PresentNotesForm = (props) => {
                 <label htmlFor="title"></label>
                 <input className='form-control'
                     name='title'
-                    placeholder='Title'
+                    placeholder='Meeting Name'
                     type='text'
                     value={title}
                     onChange={event => setTitle(event.target.value)}

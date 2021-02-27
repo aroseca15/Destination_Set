@@ -73,7 +73,7 @@ max-width: 270px;
 }
 
 #convertC{
-  max-width: 300rem;
+  max-width: 350rem;
   max-height: 400px;
   margin-right: 80px;
   background-color:  rgba(113, 125, 145, 0.348);
@@ -181,7 +181,7 @@ font-size: larger;
   font-family: 'Times New Roman', Times, serif;
   font-weight: 900;
   background-color: rgb(220, 200, 165);
-  max-width: 25%;
+  max-width: 45%;
   max-height: 100%;
   margin-top: 45px;
 }
@@ -192,7 +192,7 @@ font-size: larger;
   font-size: large;
   font-weight: 900;
   background-color: rgb(195, 199, 205);
-  max-width: 25%;
+  max-width: 45%;
   max-height: 100%;
 }
 

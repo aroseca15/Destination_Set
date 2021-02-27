@@ -25,7 +25,7 @@ const PostMeetingForm = (props) => {
                 <label htmlFor="title"></label>
                 <input className='form-control'
                     name='title'
-                    placeholder='Name '
+                    placeholder='Meeting Name '
                     type='text'
                     value={title}
                     onChange={event => setTitle(event.target.value)}
@@ -34,7 +34,7 @@ const PostMeetingForm = (props) => {
                 <label htmlFor="body"></label>
                 <textarea className='form-control'
                     name='body'
-                    placeholder='Contact Information'
+                    placeholder='Observations'
                     value={body}
                     onChange={event => setBody(event.target.value)}
                 />
