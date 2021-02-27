@@ -26,7 +26,7 @@ function Business(props) {
     console.log(destination);
     return (
         < div className='App container' >
-            <main className='container'>
+            <main className='container-fluid'>
                 {isLoggedIn() ?
                     <>
                         <Header></Header>
