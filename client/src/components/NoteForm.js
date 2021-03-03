@@ -39,7 +39,6 @@ const NoteForm = (props) => {
                 />
                 <br />
                 <button className= 'btn btn-info' type='submit'>Save</button>
-                {/* <button onClick={handleDelete} className= 'btn btn-danger' type='submit'>Delete</button> */}
             </form>
         </div>
     );

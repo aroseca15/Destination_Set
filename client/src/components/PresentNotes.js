@@ -33,13 +33,12 @@ const PresentNotesForm = (props) => {
                 <label htmlFor="body"></label>
                 <textarea className='form-control' 
                     name='body'
-                    placeholder='Details'
+                    placeholder='Presentation Ideas'
                     value={body}
                     onChange={event => setBody(event.target.value)}
                 />
                 <br />
                 <button className= 'btn btn-info' type='submit'>Save</button>
-                {/* <button onClick={handleDelete} className= 'btn btn-danger' type='submit'>Delete</button> */}
             </form>
         </div>
     );

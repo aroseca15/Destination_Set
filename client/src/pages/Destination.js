@@ -5,23 +5,7 @@ import RioDeJaneiro from '../assets/images/RioDeJaneiro.jpg';
 import NYC from '../assets/images/New York1.jpg';
 import Header from '../components/Header';
 
-// import { useState } from 'react';
-
 const Destination = () => {
-    // const history = useHistory();
-    // const location = useLocation();
-    // const city = [city, setCity] = useState();
-    // onClick={() => toggleRedirect(true)}
-    // const [cityName, setCityName] = useState('');
-    // const [selectCity, setSelectCity] = useState(false);
-
-    // const getCityDetails = (city) => {
-    //     console.log(city);
-    //     setCityName('London');
-
-    //     setSelectCity(true);
-    // };
-
     return (
 
         <main className='App container'>

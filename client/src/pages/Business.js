@@ -9,7 +9,6 @@ import { useState, useEffect } from 'react';
 import axios from 'axios';
 
 function Business(props) {
-    // console.log(props);
     const { id } = useParams();
     const { isLoggedIn } = useAuth();
     const [destination, setDestination] = useState({});
@@ -82,8 +81,6 @@ function Business(props) {
                     :
                     <>
                         <h1>Not Logged In</h1>
-                        {/* <li><button><Link to="/signup">Signup</Link></button></li>
-                        <li><button><Link to="/login">Login</Link></button></li> */}
                     </>
                 }
             </main>

@@ -20,7 +20,6 @@ const AquizForm = (props) => {
 
     return (
         <div className='container'>
-            {/* <h2>Note Form</h2> */}
             <form className='form-group' onSubmit={handleSubmit}>
                 <label htmlFor="title"></label>
                 <input className='form-control'
@@ -30,7 +29,6 @@ const AquizForm = (props) => {
                     value={title}
                     onChange={event => setTitle(event.target.value)}
                 />
-                {/* <br /> */}
                 <label htmlFor="body"></label>
                 <textarea className='form-control'
                     name='body'

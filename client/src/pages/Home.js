@@ -1,7 +1,6 @@
 import useAuth from '../hooks/auth';
 import { Link } from 'react-router-dom';
 import Clock from '../components/Clock';
-// import Translate from '../components/TranslateB';
 import ConvertCurr from '../components/ConvertCurr';
 import SpillCofLaptop from '../assets/images/SpilledCoffeeLaptop.jpg';
 import DestinSet from '../assets/images/Landing_image.jpg';
@@ -152,12 +151,13 @@ function Home(props) {
                                 <ol>
                                     {scheds.map(sched => {
                                         return (
-                                            <li key={selectedDate}>
+                                            
+                                            <div key={selectedDate}>
                                                 <strong>{sched.time}: </strong>
                                                 {sched.client}
-                                                {sched.venue}
+                                                <p>{sched.venue}</p>
                                                 {sched.venueAddress} <button onClick={() => deleteSched(sched.id)} className='btn-danger' type='submit'>X</button>
-                                            </li>
+                                            </div>
                                         );
                                     })}
                                 </ol>
@@ -170,9 +170,7 @@ function Home(props) {
 
 
                     </section>
-                    {/* <div id='translate' className='col-4 align-self-start'>
-                        <Translate></Translate>
-                    </div> */}
+
                 </>
                 :
                 <>
@@ -202,28 +200,3 @@ function Home(props) {
 }
 
 export default Home;
-
-/* <h2 className={countryApi.advisory.className}></h2> */
-
-// async function callDestination() {
-//     const dataq = {
-//         'source': 'en',
-//         'q': 'Hello, world!',
-//         'target': ';es'
-//     };
-//     const headersq = {
-//         'content-type': 'application/x-www-form-urlencoded',
-//         'x-rapidapi-host': 'google-translate1.p.rapidapi.com',
-//         'x-rapidapi-key': '2ec7e6775cmsh5864e9b8b1fc24cp1e4a90jsn0d8cfe5c5551',
-//         'accept-encoding': 'application/gzip',
-//         'useQueryString': true
-//     };
-//     await axios.post('https://google-translate1.p.rapidapi.com/language/translate/v2', dataq, {
-//         headers: headersq
-//     }).then((response) => {
-//         console.log(response);
-//     })
-//         .catch((error) => {
-//             console.log(error);
-//         });
-// }
