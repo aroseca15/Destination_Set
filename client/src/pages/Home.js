@@ -41,6 +41,14 @@ function Home(props) {
         refreshParent();
     };
 
+    // const HideSced = async () => {
+    //     if (selectedDate !== ''){
+
+    //     }else {
+
+    //     }
+    // }
+
     const [countryApi, setCountryApi] = useState({ advisory: { message: '', className: '' } });
     useEffect(() => {
         if (!props.location.linkDestination) {
@@ -145,13 +153,14 @@ function Home(props) {
                     <section className='row'>
 
                         <Calender className='sched' scheds={scheds} setSelectedDate={setSelectedDate}></Calender>
+
                         {selectedDate && (
                             <div className='card col align-self-start schedOverlay sched'>
                                 <h2>{selectedDate}</h2>
                                 <ol>
                                     {scheds.map(sched => {
                                         return (
-                                            
+
                                             <div key={selectedDate}>
                                                 <strong>{sched.time}: </strong>
                                                 {sched.client}
@@ -178,7 +187,7 @@ function Home(props) {
                         <div class="card homeCards">
                             <div class="card-body">
                                 <h1 id='h1'>Welcome to Destination Set</h1>
-                                <h4 id='h1'>Your trusted partner in safety and business as you travel for your work!!</h4>
+                                <h4 id='h1'>Your trusted partner in safety and business during your travels!!</h4>
                                 <p id='loginH'>
                                     New Here? <button className="btn btn-light" id='btn-signup' onClick={() => toggleRedirectS(true)}>Signup</button>
                                 </p>

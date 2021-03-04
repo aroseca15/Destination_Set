@@ -36,7 +36,7 @@ const Notes = function () {
         const { data } = await axios.get('/api/aquiz?include=User');
         setAquiz(data);
     }
-    
+
     async function fetchPresentNotes() {
         const { data } = await axios.get('/api/presentnotes?include=User');
         setPresentNotes(data);
@@ -119,11 +119,11 @@ const Notes = function () {
                     <div className='card col-6 align-self-start' id='aquiz' >
                         <h2 id='h2'>Business Contacts</h2>
                         <ol>
-                            {postMeetObs.map(postMeetOb => {
+                            {aquizs.map(aquiz => {
                                 return (
-                                    <li key={postMeetOb.id}>
-                                        <strong>{postMeetOb.title}: </strong>
-                                        {postMeetOb.body} <button onClick={() => deletePostMeetObs(postMeetOb.id)} className='btn-danger' type='submit'>X</button>
+                                    <li key={aquiz.id}>
+                                        <strong>{aquiz.title}: </strong>
+                                        {aquiz.body} <button onClick={() => deleteAquiz(aquiz.id)} className='btn-danger' type='submit'>X</button>
                                     </li>
                                 );
                             })}
@@ -133,11 +133,11 @@ const Notes = function () {
                     <div className='card col align-self-start' id='postMeet' >
                         <h2 id='h2'>Post-Meeting Notes</h2>
                         <ol>
-                            {aquizs.map(aquiz => {
+                            {postMeetObs.map(postMeetOb => {
                                 return (
-                                    <li key={aquiz.id}>
-                                        <strong>{aquiz.title}: </strong>
-                                        {aquiz.body} <button onClick={() => deleteAquiz(aquiz.id)} className='btn-danger' type='submit'>X</button>
+                                    <li key={postMeetOb.id}>
+                                        <strong>{postMeetOb.title}: </strong>
+                                        {postMeetOb.body} <button onClick={() => deletePostMeetObs(postMeetOb.id)} className='btn-danger' type='submit'>X</button>
                                     </li>
                                 );
                             })}
