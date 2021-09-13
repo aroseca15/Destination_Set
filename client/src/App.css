@@ -1,0 +1,318 @@
+.App{
+    text-align: center;
+    margin-top: 70px;
+  } 
+
+#acces{
+  margin-left: 30px;
+}
+
+.picAcces{
+  position: absolute;
+  top: 70%;
+  left: 8%;
+}
+
+.bg{
+    background-color: cornsilk;
+}
+
+.homeCards{
+  background-color: rgb(162, 149, 171);
+}
+
+#visa{
+  background-color: rgb(186, 172, 114);
+}
+
+.low{
+  background-color: green;
+}
+
+.medium{
+  background-color: blue;
+}
+
+.high{
+  background-color: rgba(255, 255, 0, 0.817);
+}
+
+.extreme{
+  background-color: rgba(255, 0, 0, 0.477);
+}
+
+.message{
+  margin-top: 18px;
+}
+
+#translate{
+max-width: 270px;
+}
+
+#place{
+  font-family: 'Times New Roman', Times, serif;
+  font-weight: 900;
+  font-size: xx-large;
+}
+
+#cardText{
+  font-family: 'Times New Roman', Times, serif;
+  font-weight: 900;
+  font-size: large;
+}
+
+#clothes{
+  max-width: 100%;
+  max-height: 20%;
+}
+
+#homeButtons{
+  font-size: large;
+  font-weight: 800;
+  font-family: 'Times New Roman', Times, serif;
+}
+
+#convertC{
+  max-width: 350rem;
+  max-height: 400px;
+  margin-right: 80px;
+  background-color:  rgba(113, 125, 145, 0.348);
+  font-family: 'Times New Roman', Times, serif;
+  font-weight: 900;
+}
+
+
+#btnText{
+  color: black;
+  font-size: xx-large;
+  font-weight: bolder;
+  font-family: 'Times New Roman', Times, serif;
+}
+
+#fillIn{
+  font-family: 'Times New Roman', Times, serif;
+  font-weight: 600;
+  font-size: larger;
+}
+
+#picText{
+  color: antiquewhite;
+  font-weight: bolder;
+  font-family: 'Times New Roman', Times, serif;
+}
+
+#h1{
+  margin-bottom: 50px;
+  font-family: 'Times New Roman', Times, serif;
+  font-weight: 600;
+}
+
+#h2{
+  margin-bottom: 50px;
+  font-family: 'Times New Roman', Times, serif;
+  font-weight: 600;
+}
+
+#loginH{
+  /* margin-right: 25px; */
+  margin-top: 50px;
+  font-family: 'Times New Roman', Times, serif;
+  font-weight: 600;
+  font-size: larger;
+  }
+
+#loginP{
+/* margin-right: 25px; */
+margin-top: 100px;
+font-family: 'Times New Roman', Times, serif;
+font-weight: 600;
+font-size: larger;
+}
+
+#btn-login{
+  margin-left: 10px;
+  background-color:lightsteelblue;
+  font-family: 'Times New Roman', Times, serif;
+  font-weight: 600;
+  font-size: larger;
+}
+
+#submit{
+ color: blue;
+}
+
+#btn-signup{
+  background-color:rgb(50, 205, 187);
+  margin-left: 5px;
+  font-family: 'Times New Roman', Times, serif;
+  font-weight: 600;
+  font-size: larger;
+}
+
+
+.row{
+  margin-left: 20px;
+  margin-bottom: 20px;
+}
+
+/* CSS for Notes Page: */
+#headNotesBanner{
+  margin-left: 700px;
+}
+
+#schedule{
+  font-family: 'Times New Roman', Times, serif;
+  font-weight: 500;
+  margin-left: 55px;
+  margin-top: 20px;
+}
+
+.dateTime{
+  font-family: 'Times New Roman', Times, serif;
+  font-weight: 500;
+  font-size: larger;
+  margin-left: 400px;
+}
+
+
+#notes{
+  text-align: center;
+  font-size: large;
+  font-family: 'Times New Roman', Times, serif;
+  font-weight: 900;
+  background-color: rgb(220, 200, 165);
+  max-width: 45%;
+  max-height: 100%;
+  margin-top: 45px;
+}
+
+#aquiz{
+  text-align: center;
+  font-family: 'Times New Roman', Times, serif;
+  font-size: large;
+  font-weight: 900;
+  background-color: rgb(195, 199, 205);
+  max-width: 45%;
+  max-height: 100%;
+}
+
+#presentation{
+  margin-top: 10px;
+  margin-left: 15px;
+  text-align: center;
+  font-family: 'Times New Roman', Times, serif;
+  font-size: x-large;
+  font-weight: 900;
+  background-color: rgb(186, 160, 114);
+  max-width: 75%;
+  max-height: 100%;
+
+}
+
+#postMeet{
+  margin-left: 15px;
+  text-align: center;
+  font-family: 'Times New Roman', Times, serif;
+  font-size: x-large;
+  font-weight: 900;
+  background-color: rgba(133, 114, 147, 0.803);
+  max-width:75%;
+  max-height: 100%;
+}
+
+#Bbanner{
+ background-image: url('./assets/images/Header_Business.jpg');
+}
+
+#BbannerText{
+  margin-bottom: 40px;
+  font-family: 'Times New Roman', Times, serif;
+  font-weight: 600;
+  color: antiquewhite;
+}
+
+.sched{
+  position: relative;
+  display: block;
+  text-align: center;
+  font-family: 'Times New Roman', Times, serif;
+  font-weight: 900;
+  max-width: 25rem;
+  background-color: rgba(95, 158, 160, 0.967);
+}
+
+.schedOverlay{
+  position: absolute;
+  top: 120%;
+  left: 20%;
+}
+
+.image{
+  border-radius: 25px;
+  position: relative;
+  opacity: 1;
+  display: block;
+  transition: .5s ease;
+  backface-visibility: hidden;
+}
+.image_overlay{
+  position: relative;
+  margin: 0px 0px 0px 0px;
+  width: 100%;
+  text-align: center;
+  /* margin-top: 50px; */
+}
+#searchI{
+  position: absolute;
+  top: 50%;
+  left: 70%;
+}
+
+#searchIT{
+  position: absolute;
+  margin-bottom: 20px;
+  bottom: 110%;
+  left: 30%;
+}
+
+.picTech{
+  position: absolute;
+  top: 85%;
+  left: 20%;
+}
+
+.city{
+  transition: .5s ease;
+  opacity: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  color: antiquewhite;
+  font-size: xx-large;
+  font-weight: bolder;
+}
+
+.picText{
+  position: absolute;
+  top: 20%;
+  left: 0%;
+  color: antiquewhite;
+  font-weight: bolder;
+}
+
+.overlay:hover .image {
+  opacity: 0.1;
+}
+
+
+
+.overlay:hover .city {
+  opacity: 1;
+  background-color: rgba(255, 228, 196, 0.463);
+}
+/* Photo Credits: Paris- www.vactualpapers.com   Rio De Janeiro- www.freewalkertours.com/   London- www.youtube.com    New York- www.istockphoto.com  */
+/* .icons{
+  
+} */
